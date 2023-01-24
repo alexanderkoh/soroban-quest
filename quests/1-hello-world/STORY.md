@@ -1,43 +1,23 @@
-# Chapter 1
+# Capítulo 1
 
-Squaktahune Temple towered over Blossom Bernice Breydenblach and Roscoe as they
-stepped toward the vast stone door blocking their way. They had been traveling
-for just over five hours, and Roscoe's feet were starting to ache. Luckily the
-sun was setting, and he no longer needed the visor he had constructed out of
-duct tape. It was hardly fashionable, after all.
+El Templo Squaktahune se alzaba sobre Blossom Bernice Breydenblach y Roscoe mientras avanzaban hacia la vasta puerta de piedra que los bloqueaba. Habían estado viajando durante un poco más de cinco horas, y los pies de Roscoe empezaban a doler. Afortunadamente, el sol se estaba poniendo y ya no necesitaba la visera que había construido con cinta adhesiva. Realmente no era muy elegante.
 
-"What are all these symbols?" he asked, brushing aside vines and running his
-hand along the temple wall.
+"¿Qué son todos estos símbolos?", preguntó, apartando las enredaderas y acariciando la pared del templo.
 
-"It's a mystery," Bee replied. "But legend says this temple was built by an
-ancient alien species, so what we encounter may not even be from this world."
+"Es un acertijo", respondió Bee. "Pero la leyenda dice que este templo fue construido por una especie antigua extraterrestre, así que lo que encontremos aquí puede que no sea de este mundo".
 
-Roscoe frowned. "Oh, wonderful, an ancient alien species. What have I gotten
-myself into?"
+Roscoe frunció el ceño. "Oh, maravilloso, una antigua especie extraterrestre. ¿En qué me he metido?"
 
-"The adventure of a lifetime, Roscoe, " Bee said as she placed her hands against
-the door and pushed. It didn't budge. "Help me out here."
+"En la aventura de tu vida, Roscoe", dijo Bee mientras apoyaba sus manos en la puerta y empujaba. La puerta no se movió. "Ayúdame aquí".
 
-Roscoe set his shoulder against the stone and shoved. The door stayed stubbornly
-shut. "If you brought me along for my muscles, you'll be sorely disappointed.
-This thing isn't moving. Has our adventure ended before it's even begun?"
+Roscoe puso su hombro contra la piedra y empujó. La puerta se mantuvo tercamente cerrada. "Si me has traído por mis músculos, quedarás muy decepcionada. Esto no se mueve. ¿Nuestra aventura ha terminado antes de siquiera haber comenzado?"
 
-"Don't be silly! This is just our first riddle," Bee said as she pulled a
-magnifying glass out of her backpack and set about examining the door. "Get out
-a light, I can't see anything!"
+¡No seas tonto! Este es solo nuestro primer acertijo, dijo Bee mientras sacaba una lupa de su mochila y empezaba a examinar la puerta. ¡Alúmbrame, no veo nada!
 
-Roscoe dug around in the pack and emerged with a star-shaped flashlight.
-"Really, Bee? I thought you were a more serious explorer," he said, brandishing
-the light toward her.
+Roscoe buscó en su mochila y sacó una linterna con forma de estrella. ¿En serio, Bee? Pensé que eras una exploradora más seria, dijo, apuntando la luz hacia ella.
 
-"Oh, hush!" Bee answered, grabbing the flashlight and shining it on the rough
-stone. "Look here! Symbols on the door! What do you think they mean?" Bee stood
-aside so Roscoe could inspect the two distinct images: one looked like a waving
-hand, and the other looked like Earth.
+¡Oh, cállate! Respondió Bee, agarrando la linterna y alumbrando la áspera piedra. ¡Mira aquí! ¡Símbolos en la puerta! ¿Qué crees que significan? Bee se apartó para que Roscoe pudiera inspeccionar los dos símbolos distintos: uno parecía una mano ondulante y el otro, el planeta Tierra.
 
-"Hello World?" Roscoe questioned. Immediately following those words, the door
-rumbled open, revealing an immense, dimly lit hallway.
+¿Hola Mundo? Preguntó Roscoe. Inmediatamente después de esas palabras, la puerta se abrió con un estruendo, revelando un pasillo oscuro e inmenso.
 
-"Oh, Roscoe! I knew I brought you along for a reason!" Bee said as she grabbed
-Roscoe's arm and dragged him into the awaiting temple and onward to their next
-challenge.
+¡Oh, Roscoe! ¡Sabía que te traje por alguna razón! Dijo Bee mientras agarraba el brazo de Roscoe y lo arrastraba hacia el templo que los esperaba y hacia su próximo desafío.
