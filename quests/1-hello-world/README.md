@@ -11,25 +11,23 @@ En esta misión, usarás tu **Cuenta Quest** para desplegar e invocar el contrat
 - [Sumario](#Sumario)
 - [Cómo jugar](#como-jugar)
   - [Autenticarse con Discord](#authenticate-with-discord)
-  - [Pull Nuevas Quests](#pull-in-new-quests)
-  - [Retrieve your Quest Account](#retrieve-your-quest-account)
-  - [Fund that Account](#fund-that-account)
-  - [Quest Your Heart Out](#quest-your-heart-out)
-  - [Check your Quest Answer](#check-your-quest-answer)
-  - [Claim your Badge](#claim-your-badge)
-- [The Task at Hand](#the-task-at-hand)
-  - [Explore the Contract Code](#explore-the-contract-code)
-  - [Build the Contract](#build-the-contract)
-  - [Run a Test](#run-a-test)
-  - [Deploy to Futurenet](#deploy-to-futurenet)
-  - [Invoke it on Futurenet](#invoke-it-on-futurenet)
-- [Finish the Quest](#finish-the-quest)
-- [Further Reading](#further-reading)
-- [Still Stuck?](#still-stuck)
+  - [Pull Nuevas Misiones (Quests)](#pull-in-new-quests)
+  - [Recupera tu cuenta de misión](#retrieve-your-quest-account)
+  - [Financiar tu cuenta](#fund-that-account)
+  - [Empieza la misión](#quest-your-heart-out)
+  - [Revisar tu respuesta](#check-your-quest-answer)
+  - [Reclamar tu medalla](#claim-your-badge)
+- [La Tarea a Mano](#the-task-at-hand)
+  - [Explorar el código del contrato](#explore-the-contract-code)
+  - [Construir el contrato](#build-the-contract)
+  - [Ejecutar una prueba](#run-a-test)
+  - [Desplegar en Futurenet](#deploy-to-futurenet)
+  - [Invócalo en Futurenet](#invoke-it-on-futurenet)
+- [Termina la misión](#finish-the-quest)
+- [Lectura adicional](#further-reading)
+- [¿Sigues Atascado?](#still-stuck)
 
 ## ¿Cómo Jugar?
-
-
 
 Antes de que podamos empezar con las misiones, necesitamos asegurarnos de que realmente estás listo para empezar. ¡Haz lo siguiente antes de continuar!
 
@@ -67,203 +65,146 @@ También puedes hacerlo manualmente, si eres un experto en `git`. Encuentra los 
 Una vez completes esto, verás las nuevas misiones en el siguiente directorio:
 `/workspace/<nombre-de-tu-espacio-de-trabajo>/quests/`
 
-### Retrieve your Quest Account
+### Recuperar tu cuenta de misión
 
-Before you can play, you must retrieve the `Quest Keypair` for the quest you
-want to play. You get that information by running the following:
+Antes de poder jugar, debes recuperar la `clave de misión` para la misión que deseas jugar. Puedes obtener esa información ejecutando lo siguiente:
 
 ```bash
 sq play -i 1 # use whichever quest number you are trying to play
 ```
 
-Save this information, because (trust me) you'll need it later!
+Guarda esta información, porque (créeme) la necesitarás más tarde.
 
-### Fund that Account
+### Financiar tu cuenta
 
-We even put together a handy way for you to get your Futurenet Lumens from
-Futurenet Friendbot (you might know his cousin...). `sq` can help you with that
-like so:
+Incluso armamos una manera práctica de obtener tus Lumens de Futurenet de
+Futurenet Friendbot (quizás conozcas a su primo...). `sq` puede ayudarte con eso
+de esta manera:
 
 ```bash
 sq fund --key GDGYB5FZUKAVPYGCLJTCYYOJPEHHVOCZS7I6SBWF233OQSIROZ7JXLGO
 ```
 
-### Quest Your Heart Out
+### Empezar la misión
 
-Now you're ready to move on to the actual quest part of this! Please skip ahead
-to [this section](#the-task-at-hand) to begin the fun part!
+¡Ahora estás listo para pasar a la parte de la misión real de esto! Por favor, salta a [esta sección](https://chat.openai.com/chat#the-task-at-hand) para comenzar la parte divertida.
 
-When you think you've finished all that is required, come back here and check
-your work!
+Cuando creas que has terminado todo lo necesario, regresa aquí y revisa tu trabajo.
 
-### Check your Quest Answer
+### Revisar tu respuesta
 
-You've done the hard work, and you're ready to see if it has paid off! Run the
-following command to verify your work:
+Has hecho el trabajo duro y estás listo para ver si ha valido la pena. Ejecuta el
+siguiente comando para verificar tu trabajo:
 
 ```bash
-sq check -i 1 # use whichever quest number you are trying to verify
+sq check -i 1 # usa el número de misión que estás tratando de verificar
 ```
 
-If you still haven't completed KYC and/or tax submission, you'll be reminded one
-more time that you can't claim XLM rewards without them. If you still have more
-work to do, you'll be given a clue as to what might be missing from your Quest
-Account.
+Si todavía no has completado el KYC y/o el envío de impuestos, se te recordará una vez más que no puedes reclamar recompensas XLM sin ellos. Si todavía tienes más trabajo que hacer, se te dará una pista sobre qué puede faltar en tu cuenta de misión.
 
-### Claim your Badge
+### Reclamar tu medalla
 
-If your check was successful, the `sq` CLI will let you know with a celebratory
-emoji! You'll then be able to choose how you want to claim your prize: sign a
-transaction using **Albedo**, or sign the **Raw XDR**.
+Si tu verificación fue exitosa, ¡la interfaz de línea de comandos `sq` te lo hará saber con un emoticono celebratorio! Entonces podrás elegir cómo quieres reclamar tu premio: firmar una transacción utilizando **Albedo** , o firmar el **Raw XDR** .
 
-If you select "Albedo," a window will open asking you to sign the transaction,
-and thus allowing you to claim your badge and any prize XLM you may have earned.
+Si seleccionas "Albedo", se abrirá una ventana pidiéndote que firmes la transacción, permitiéndote así reclamar tu distintivo y cualquier XLM premiado que hayas ganado.
 
-If you choose "Raw XDR," the transaction will be output to the terminal window,
-and you will need to sign it using Stellar Laboratory (or your preferred
-method). Then you must submit the signed transaction XDR using the `sq CLI`.
-That will look something like this:
+Si eliges "Raw XDR", la transacción se mostrará en la ventana del terminal y tendrás que firmarla usando Stellar Laboratory (o tu método preferido). Luego, deberás enviar la transacción firmada XDR utilizando el comando `sq CLI`. Sería algo así:
 
 ```bash
 sq submit --xdr AAAAAgAAAADQTypLJCls2UK4wzQpHyTOdkEBKb78PvEFf7/UqD0P4gAPQkAACutwAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACgAAAAdTdGVsbGFyAAAAAAEAAAAMUXVlc3QgUnVsZXMhAAAAAAAAAAGoPQ/iAAAAQGsvY+U2M6kGvsbJ+82A8lAQbZG/upocKynAFvADJETNUSbzMtG51KyQdetujsswz9rDDnjPosfZDVsq3ibUcAg=
 ```
 
-Then you can pat yourself on the back and bask in the glow of your amazing new
-Stellar Quest badge!
+¡Luego podrás darte una palmada en la espalda y disfrutar de tu increíble nuevo distintivo de Quest Stellar!
 
-## The Task at Hand
+## La tarea a mano
 
-This first quest is a pretty simple one, and it comes almost directly from the
-Soroban examples, too! All we're doing here is getting our feet wet, so you
-won't need to worry about *writing* any Rust contracts, or anything like that.
-Here's what you need to know to complete this quest.
+Esta primera misión es bastante sencilla y viene directamente de los ejemplos de Soroban. ¡Sólo estamos mojando los pies, por lo que no tendrás que preocuparte por escribir contratos Rust o algo por el estilo! Aquí te presentamos lo que necesitas saber para completar esta misión.
 
-### Explore the Contract Code
+### Explorar el código del contrato
 
-If you open up the [`lib.rs` file](src/lib.rs), you'll be able to see some
-helpful comments that briefly describe what each portion of the code is doing.
+Si abres el archivo [`lib.rs`](https://chat.openai.com/src/lib.rs), podrás ver algunos comentarios útiles que describen brevemente lo que hace cada parte del código.
 
-*This contract accepts an argument and responds with a greeting containing that
-argument that was supplied.*
+*Este contrato acepta un argumento y responde con un saludo que contiene ese argumento proporcionado.*
 
-A more in-depth dissection of this example smart contract can be found in our
-[Pioneer Quest][pq-lib].
+Una dissecación más profunda de este ejemplo de contrato inteligente se puede encontrar en nuestra [Pioneer Quest][pq-lib].
 
-### Build the Contract
 
-We can now move on to actually *build* our contract! I know you didn't think you
-would make it this far. Give yourself a pat on the back!
+### Construir el contrato
 
-*The build process compiles our Rust code that is purpose-built for the
-WebAssembly environment that Soroban will provide for it.*
+¡Ahora podemos pasar a construir realmente nuestro contrato! Sé que no pensabas llegar tan lejos. ¡Dáte una palmada en la espalda!
 
-If you need some instructions to help you along with this step, you can check
-out the [build tutorial][docs-build] in the Soroban documentation.
+*El proceso de construcción compila nuestro código Rust que está diseñado específicamente para el entorno WebAssembly que Soroban proporcionará.*
 
-Here's the short story version of what you'll need to build the contract. Run
-these commands from within your Futurenet terminal:
+Si necesitas algunas instrucciones para ayudarte en este paso, puedes consultar el [tutorial de construcción][docs-build] en la documentación de Soroban.
+
+Aquí te presentamos la versión corta de lo que necesitas para construir el contrato. Ejecuta estos comandos desde tu terminal Futurenet:
 
 ```bash
-# change into the quest directory
+# entra al directorio de quests
 cd quests/1-hello-world
-# build the contract
+# construye el contrato
 cargo build \
     --target wasm32-unknown-unknown \
     --release
 ```
 
-> *Note*: We used to ship a `Makefile` with this repository which could run this
-> build command for each quest. This introduced certain bugs with unfinished
-> quests, and presented users with errors related to irrelevant quests. We no
-> longer ship that `Makefile`, and encourage users to manually build each
-> contract.
+> *Nota* : Solíamos enviar un `Makefile` con este repositorio que podía ejecutar este comando de construcción para cada misión. Esto introducía ciertos errores con misiones incompletas y presentaba a los usuarios con errores relacionados con misiones irrelevantes. Ya no enviamos ese `Makefile` y alentamos a los usuarios a construir manualmente cada contrato.
 
-### Run a Test
+### Ejecutar una prueba
 
-You can also look at the [`test.rs` file](src/test.rs), and see it also has some
-helpful comments, too.
+También puedes mirar el archivo [`test.rs`](https://chat.openai.com/src/test.rs) y ver que también tiene algunos comentarios útiles.
 
-*This test invokes the contract's `hello()` function, and checks to make sure
-the contract gives the expected response.*
+*Esta prueba invoca la función `hello()` del contrato y verifica que el contrato dé la respuesta esperada.*
 
-Once you've got an understanding of what's happening in the test scenario, go
-ahead and run the test, ensuring that our contract is behaving properly.
+Una vez que tengas una comprensión de lo que está sucediendo en el escenario de prueba, adelante y ejecuta la prueba, asegurando que nuestro contrato se esté comportando correctamente.
 
-Just like before file, the [Pioneer Quest][pq-test] contains a much more
-elaborate explanation of this file, and what is happening along each step of the
-way
+Al igual que antes, el [Pioneer Quest][pq-test] contiene una explicación mucho más elaborada de este archivo y de lo que está sucediendo en cada paso del camino.
 
-To actually run the test in your quest Gitpod workspace, run these commands from
-within your Futurenet terminal:
+Para ejecutar realmente la prueba en tu espacio de trabajo Gitpod de la misión, ejecuta estos comandos desde tu terminal de Futurenet:
 
 ```bash
-# change into the quest directory (if you're not there already)
+# cambiate al directorio de quest (dado que no estés ahí ahora)
 cd quests/1-hello-world
-# run the tests in that directory
+# ejecuta los tests en ese directorio
 cargo test
 ```
 
-> *Note*: We used to ship a `Makefile` with this repository which could run this
-> test command for each quest. This introduced certain bugs with unfinished
-> quests, and presented users with errors related to irrelevant quests. We no
-> longer ship that `Makefile`, and encourage users to manually test each
-> contract.
+> *Nota* : Solíamos enviar un `Makefile` con este repositorio que podía ejecutar este comando de prueba para cada misión. Esto introducía ciertos errores con misiones incompletas y presentaba a los usuarios con errores relacionados con misiones irrelevantes. Ya no enviamos ese `Makefile` y alentamos a los usuarios a probar manualmente cada contrato.
 
-### Deploy to Futurenet
+### Desplegar en Futurenet
 
-The Stellar Futurenet is a safe playground where your contract code can live and
-work while it is still in development and (potentially) unstable.
+El Stellar Futurenet es un lugar seguro donde tu código de contrato puede vivir y trabajar mientras aún está en desarrollo y (potencialmente) inestable.
 
-*Deploying the contract will upload the build binary file to the Futurenet,
-making it readily available for invocation and use in the network's Soroban
-environment.*
+*Desplegar el contrato subirá el archivo binario de construcción a Futurenet, haciéndolo disponible de inmediato para la invocación y el uso en el entorno Soroban de la red.*
 
-You can find some guidance on deploying your contract to the Futurenet in the
-[deploy tutorial][docs-deploy] from the Soroban documentation.
+Puedes encontrar algunas orientaciones sobre cómo desplegar tu contrato en Futurenet en el tutorial de [despliegue][docs-deploy] de la documentación de Soroban.
 
-### Invoke it on Futurenet
+### Invócalo en Futurenet
 
-Now comes the exciting part! Your job is to **invoke** the smart contract that
-you just uploaded to the Futurenet. Doesn't it just make you want to shout with
-excitement!?
+Ahora llega la parte emocionante! Tu trabajo es **invocar** el contrato inteligente que acabas de subir a Futurenet. ¿No te da ganas de gritar de emoción?
 
-*Invoking your contract will use the Stellar network to call up the contract you
-just uploaded and execute the `hello()` function.*
+*Invocar tu contrato usará la red Stellar para llamar al contrato que acabas de subir y ejecutar la función `hello()`.*
 
-The [deploy tutorial][docs-deploy] can also give you some guidance on the finer
-points of invoking a Futurenet contract, if you need.
+El tutorial de [despliegue][docs-deploy] también puede brindarte algunas orientaciones sobre los puntos finos de la invocación de un contrato Futurenet, si es necesario.
 
-## Finish the Quest
+## Finalizar la misión
 
-If you've made it this far, and you haven't blown up anything, you're probably
-on the right track! Now's a great time to use the `sq` CLI to check your work,
-and try to claim your prize!
+Si has llegado hasta aquí y no has estallado nada, probablemente estás en el camino correcto. Ahora es un buen momento para usar el CLI `sq` para revisar tu trabajo y tratar de reclamar tu premio.
 
-You can find those [instructions here](#check-your-quest-answer).
+Puedes encontrar esas [instrucciones aquí](https://chat.openai.com/chat#check-your-quest-answer).
 
-## Further Reading
+## Lectura adicional
 
-Now that you've completed your quest, you might have your interest piqued, and
-be curious about all sorts of things. Here's a collection of some related
-resources that might be of interest to you:
+Ahora que has completado tu misión, es posible que tu interés esté despertado y estés curioso sobre todo tipo de cosas. Aquí tienes una recopilación de algunos recursos relacionados que te pueden interesar:
 
-- The official [Soroban Site][soroban] contains announcements, even more
-  resources, exciting learning opportunities, and more!
-- The [Soroban CAP][cap] (and the related ones) outline the design choices and
-  implementations of the Soroban smart contract platform. (Warning: these
-  documents can be quite technical.)
-- The Soroban documentation contains a number of [example contracts][examples]
-  that can help you wrap your mind around even more of the concepts and ideas
-  Soroban is built on.
-- You can learn more about the [contract lifecycle][contract-lifecycle] in the
-  "Learn" section of the Soroban documentation. There are tons of great articles
-  here, and you should read through as many of them as you can!
+* El sitio web oficial de [Soroban] contiene anuncios, más recursos, oportunidades emocionantes de aprendizaje y más.
+* El [Soroban CAP][cap] (y los relacionados) describen las opciones de diseño e implementaciones de la plataforma de contrato inteligente Soroban. (Advertencia: estos documentos pueden ser bastante técnicos).
+* La documentación de Soroban contiene una serie de [contratos de ejemplo][examples] que pueden ayudarte a comprender mejor los conceptos y las ideas en las que se basa Soroban.
+* Puedes aprender más sobre el [ciclo de vida del contrato][contract-lifecycle] en la sección "Aprender" de la documentación de Soroban. ¡Hay toneladas de excelentes artículos aquí y debes leer tantos como puedas!
 
-## Still Stuck?
+## ¿Sigues atascado?
 
-If you're hitting a brick wall, and you're not sure what your next move is,
-check out [this section](../../README.md#feeling-lost) in our main README. It's
-got a couple of suggestions for where you might go from here.
+Si te estás topando con un muro y no estás seguro de cuál es tu próximo movimiento, echa un vistazo a [esta sección](https://chat.openai.com/README.md#feeling-lost) en nuestro README principal. Tiene un par de sugerencias sobre adónde ir a continuación.
 
 [pq-lib]: https://github.com/tyvdh/soroban-quest--pioneer/blob/main/quests/0-hello-world/src/lib.rs
 [pq-test]: https://github.com/tyvdh/soroban-quest--pioneer/blob/main/quests/0-hello-world/src/test.rs
