@@ -1,13 +1,13 @@
-// We don't include the standard library to minimize compiled size.
-// We also import a few macros and types we need from the `soroban_sdk`.
+// No incorporamos la biblioteca standard para minimizar el tamaño de compilación.
+// Importamos unos cuantos macros y tipos (types) desde la `soroban_sdk`.
 #![no_std]
 use soroban_sdk::{contractimpl, symbol, vec, Env, Symbol, Vec};
 
 pub struct HelloContract;
 
-// Our `HelloContract` implementation contains only one function, `hello()`.
-// This function will receive a `to` argument, and return a Vec made up of
-// "Hello" and the supplied `to` value.
+// Nuestra implementación del contrato `HelloContract` contiene solo una función, `hello()`.
+// Esta función recive un argumento `to` y retorna un Vec made compuesto de
+// "Hello" y el valor suministrado al argumento `to`.
 #[contractimpl]
 impl HelloContract {
     pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
@@ -15,5 +15,5 @@ impl HelloContract {
     }
 }
 
-// This `mod` declaration inserts the contents of `test.rs` into this file.
+// Esta declaración `mod` inserta los contenidos de `test.rs` en este archivo.
 mod test;
