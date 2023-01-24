@@ -1,35 +1,17 @@
-# Prologue
+# Prólogo
 
-Blossom Bernice Breydenblach carefully placed the bottle of universal solvent in
-her backpack before zipping it up and reaching for the grappling hook. Roscoe
-popped his head through the tent flap, eyes widening. "Good gracious, Bee. Are
-you planning to pack the entire camp?"
+Blossom Bernice Breydenblach colocó con cuidado la botella de solvente universal en su mochila antes de cerrarla con la cremallera y agarró el gancho de escalada. Roscoe asomó la cabeza por la abertura de la tienda de campaña y con sorpresa. "Caramba, Bee. ¿Estás planeando empacar todo el campamento?"
 
-"Unlikely adventures require unlikely tools, my friend," Bee said as she
-finished looping the grappling hook and attaching it to the bag. "Riddles and
-dangers aplenty await us in Squaktahune Temple, and it is best to be prepared!"
+"Las aventuras poco probables requieren herramientas poco probables, amigo mío", dijo Bee mientras terminaba de envolver el gancho de escalada y lo atarlo a su mochila. "¡Un montón de peligros y acertijos nos esperan en el Templo Squaktahune, y es mejor estar preparado!"
 
-Roscoe stepped into the tent and proceeded to sprawl out in a nearby chair. "I
-suppose it's prudent for one of us to be prepared for this quest," he said,
-running a hand through his mop of hair (give him a break, a good barber was hard
-to find in the Jordanian desert). "Why are we even seeking this Golden Soroban,
-anyway?"
+Roscoe entró en la carpa y se desparramó en una silla cercana. "Supongo que es prudente que uno de nosotros esté preparado para esta expedición", dijo, pasando una mano por su cabello enmarañado (dadle un descanso, era difícil encontrar un buen barbero en el desierto jordano). Entonces, ¿Por qué es que estamos buscando el Soroban de Oro?
 
-Bee glared pointedly at Roscoe. "You know why. The Golden Soroban, in the wrong
-hands, will doom society for eternity. We are doing this for the good of
-humankind."
+Bee miró a Roscoe con intensidad. "Ya sabes por qué. El Soroban de Oro, en manos equivocadas, condenará a la sociedad para siempre. Estamos haciendo esto por el bien de la humanidad".
 
-"Oh, is that all," said Roscoe. "Let's get on with it then!" He stood up with a
-flourish and lept from the tent.
+"Oh, solo eso... " dijo Roscoe. "Entonces, ¡No hay tiempo que perder! ", Se levantó con un gesto triunfal y saltó de la carpa.
 
-Bee sighed. Yes, many challenges stood in their way, but once the Golden Soroban
-was in their hands, they would be able to use it for so many wonderful things.
-Bee tightened the laces on her boots and swung her pack onto her shoulders
-before marching out into the thick, windswept sand. Roscoe fell into step beside
-her holding just a water bottle and some duct tape.
+Bee suspiró. Sí, muchos desafíos se interponían en su camino, pero una vez que tuvieran el Soroban de oro en sus manos, podrían usarlo para cosas maravillosas. Bee apretó firmemente los cordones de sus botas y se colocó su mochila antes de marchar hacia las densas arenas ventosas. Roscoe caminó a su lado con solo una botella de agua y un poco de cinta adhesiva.
 
-Bee raised her eyebrow as Roscoe chuckled. "Just the essentials," he said with a
-wink.
+Roscoe se rió, y Bee levantó una ceja. "Solo lo esencial," dijo con un guiño.
 
-With these essentials in tow, Blossom Bernice Breydenblach and Roscoe hiked
-toward Squaktahune Temple, the Golden Soroban, and adventure.
+Con estos elementos esenciales en la mano, Blossom Bernice Breydenblach y Roscoe caminaron hacia el Templo Squaktahune, el Soroban de oro y la aventura.
