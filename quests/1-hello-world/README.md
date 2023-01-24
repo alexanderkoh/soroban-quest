@@ -1,19 +1,17 @@
 # Quest 1 - Hello World <!-- omit in toc -->
 
-## TL;DR
+## Sumario
 
-I know you're in a hurry. There are Lumens on the line! Here's the quick-n-dirty
-version of what you need to do to get that awesome SQ badge.
+Sé que estás apurado. ¡Hay Lumens en juego! Aquí te dejo la versión rápida y sucia de lo que necesitas hacer para conseguir la medalla SQ.
 
-**In this quest, you will use your Quest Account to deploy and invoke the quest
-1 Hello World contract on the Stellar Futurenet.**
+En esta misión, usarás tu **Cuenta Quest** para desplegar e invocar el contrato " 1 Hello World" en la Futurenet de Stellar.
 
-## Table of Contents <!-- omit in toc -->
+## Tabla de Contenidos <!-- omit in toc -->
 
-- [TL;DR](#tldr)
-- [How to Play](#how-to-play)
-  - [Authenticate with Discord](#authenticate-with-discord)
-  - [Pull in New Quests](#pull-in-new-quests)
+- [Sumario](#Sumario)
+- [Cómo jugar](#como-jugar)
+  - [Autenticarse con Discord](#authenticate-with-discord)
+  - [Pull Nuevas Quests](#pull-in-new-quests)
   - [Retrieve your Quest Account](#retrieve-your-quest-account)
   - [Fund that Account](#fund-that-account)
   - [Quest Your Heart Out](#quest-your-heart-out)
@@ -29,53 +27,45 @@ version of what you need to do to get that awesome SQ badge.
 - [Further Reading](#further-reading)
 - [Still Stuck?](#still-stuck)
 
-## How to Play
+## ¿Cómo Jugar?
 
-Before we can get you questing, we need to make sure you are actually *ready* to
-quest! So, do this before you move on to anything else!
 
-**Note:** You will be required to follow this basic procedure for each of the
-quests during this series. Please take a moment to review the following
-instructions and make yourself familiar with them. You'll be thankful you did!
 
-### Authenticate with Discord
+Antes de que podamos empezar con las misiones, necesitamos asegurarnos de que realmente estás listo para empezar. ¡Haz lo siguiente antes de continuar!
 
-In one of your `bash` shells in the bottom panel of your Gitpod Workspace, run
-the following command:
+**Nota**: Tendrás que seguir este procedimiento básico para cada una de las misiones de esta serie. Por favor, tómate un momento para revisar las siguientes instrucciones y familiarizarte con ellas. ¡Estarás agradecido que lo hiciste!
+
+### Autenticarse con Discord
+
+En uno de los terminales de  `bash` en el panel inferior de tu espacio de trabajo en Gitpod, ejecuta el siguiente comando:
 
 ```bash
 sq user
 ```
 
-If you see that you are successfully authenticated, you can keep moving.
-Otherwise, you should run:
+Si ves que te has autenticado con éxito, puedes seguir adelante. De lo contrario, deberías ejecutar:
 
 ```bash
 sq login
 ```
 
-to sign in with your Discord acccount. You'll then be prompted to complete KYC
-or submit tax information, if either are required of you.
+para iniciar sesión con tu cuenta de Discord. Luego se te pedirá que completes el KYC o envíes información fiscal, si es necesario.
 
-**Note:** If you haven't completed the KYC flow and tax submission on the
-[Stellar Quest site][sq-site], your ability to claim XLM rewards will be
-affected by that. Complete those steps so we can give you the rewards you've
-worked really hard for!
+**Nota**: Si no has completado el flujo de KYC y el envío de impuestos en el sitio de Stellar Quest, tu capacidad para reclamar recompensas XLM se verá afectada. Completa esos pasos para que podamos darte las recompensas por las que has trabajado tan duro.
 
-### Pull in New Quests
+### Pull Nuevas Misiones (Quests)
 
-When the countdown reaches 0 for each quest release, you can pull in the newly published quest by running the following command:
+Cuando el contador llegue a 0, puedes importar la Quest recién publicada ejecutando el siguiente comando:
 
 ```bash
 cd /workspace/<the-workspace-name> # `sq pull` must be run from inside the workspace root
 sq pull
 ```
 
-You can also do this manually, if you're a `git` veteran. Find the specifics
-over in our [Pioneer Quest][pq-new-quests].
+También puedes hacerlo manualmente, si eres un experto en `git`. Encuentra los detalles específicos en nuestra [Pioneer Quest][pq-new-quests].
 
-One that's complete you'll see the new quests delivered to your
-`/workspace/<the-workspace-name>/quests/` directory.
+Una vez completes esto, verás las nuevas misiones en el siguiente directorio:
+`/workspace/<nombre-de-tu-espacio-de-trabajo>/quests/`
 
 ### Retrieve your Quest Account
 
