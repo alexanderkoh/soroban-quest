@@ -1,39 +1,20 @@
-# Chapter 2
+# Capítulo 2
 
-Roscoe trailed Blossom Bernice Breydenblach as she moved quickly through the
-entrance hall of Squaktahune Temple. Torches flickered as they swept by and
-shadows danced on the stone walls. Roscoe felt nervous, there was no denying it,
-ancient aliens were no joke. And Bee was walking entirely too fast.
+Roscoe siguió a Blossom Bernice Breydenblach mientras se movía rápidamente por el hall de entrada del Templo Squaktahune. Las antorchas parpadeaban mientras pasaban y las sombras bailaban en las paredes de piedra. Roscoe se sentía nervioso, no había forma de negarlo, los antiguos extraterrestres no eran una broma. Y Bee caminaba demasiado rápido.
 
-"Look out!" he yelled, grabbing Bee's backpack as she rounded a corner. She fell
-back with a yelp. "That recklessness of yours will get you killed!" he added,
-peering across the massive pit before them.
+"¡Cuidado!" gritó, agarrando la mochila de Bee al dar una esquina. Ella cayó de espaldas con un grito. "Esa imprudencia tuya te matará!", agregó, mirando a través del gran pozo ante ellos.
 
-Bee puffed out a breath. "Thanks," she said, standing up and walking to the
-pit's edge. "Woah, is that lava down there?"
+Bee exhaló un suspiro. "Gracias", dijo, levantándose y acercándose al borde del pozo. "¡Guau, eso es lava abajo!"
 
-"Indeed, and very large spikes," Roscoe said and squinted into the abyss. "Wait,
-are those… snakes in the lava? Lava snakes? You'd think they'd spread things out
-a bit. Lava, spikes, and snakes in one obstacle is a bit overkill. I mean, we'd
-die from any one of those, much less all three."
+"De hecho, y muy grandes puntas", dijo Roscoe y entrecerró los ojos hacia el abismo. "Espera, ¿son esos ... serpientes en la lava? ¿Serpientes de lava? Uno pensaría que dispersarían las cosas un poco. Obstáculo de lava, puntas y serpientes en uno es un poco excesivo. Quiero decir, moriríamos de cualquiera de esos, mucho menos de todos los tres".
 
-Bee chuckled and started unwinding the grappling hook from her backpack. Roscoe
-noticed a chain with a sturdy-looking metal hook descending from the ceiling
-above the pit. "You going to be able to hook that?" he asked.
+Bee rió y comenzó a desenrollar el gancho de escalada de su mochila. Roscoe notó una cadena con un gancho de metal fuerte-looking que descendía del techo por encima del pozo. "¿Vas a poder enganchar eso?" preguntó.
 
-"I was a cowgirl in my past life," she answered and began to swing the grappling
-hook around. Roscoe ducked and backed away. He wasn't dying from a grappling
-hook to the head, that was for sure. Bee released the hook, and it soared
-through the air, catching the chain. She tugged on the rope a few times before
-handing it to Roscoe. "You go first," she said.
+"Fui una cowgirl en mi vida pasada", respondió y comenzó a balancear el gancho de escalada alrededor. Roscoe se agachó y retrocedió. Sin duda no moriría por un gancho de escalada en la cabeza. Bee soltó el gancho, y voló por el aire, agarrando la cadena. Tiró de la cuerda unas cuantas veces antes de entregársela a Roscoe. "Tú primero", dijo.
 
-Roscoe grabbed the rope and, without thinking of the implications, leaped into
-the air and swung over the gaping hole. His feet hit the ground on the other
-side, and he straightened up and lobbed the rope back. Bee caught it and,
-without hesitation, vaulted into the air.
+Roscoe agarró la cuerda y, sin pensar en las implicaciones, saltó en el aire y se balanceó sobre el abismo. Sus pies aterrizaron en el otro lado, y se enderezó y lanzó la cuerda de vuelta. Bee la agarró y, sin dudarlo, se lanzó en el aire.
 
-Just then, a cackling laugh resounded off the stone walls, and an arrow whizzed
-through the air, slicing through the grappling hook rope as Bee hit her upswing.
+Justo entonces, una risa histérica resonó en las paredes de piedra y una flecha silbó por el aire, cortando la cuerda del gancho de escalada mientras Bee alcanzaba su subida.
 
 "BEE!" Roscoe yelled, watching her arc toward the lava snakes. Thinking fast,
 Bee swung the remaining rope over her head and flung it desperately at Roscoe as
@@ -55,3 +36,15 @@ superhero?"
 "More like supervillain. I'll tell you on the way, we can't let him catch up. We
 must reach the Golden Soroban before he does," Bee said. She grabbed Roscoe's
 arm and towed him onward to the next challenge.
+
+"¡BEE!" Gritó Roscoe, viendo cómo se deslizaba hacia las serpientes de lava. Pensando rápidamente, Bee agitó la cuerda restante sobre su cabeza y la lanzó desesperadamente a Roscoe mientras caía. Se inclinó hacia adelante y atrapó la cuerda, apresurándose a apoyarse contra el borde del abismo. La cuerda se tensó y Bee chocó contra la pared de piedra del abismo. Luego, con un poco de ayuda de la adrenalina, Roscoe arrastró a Bee hasta la seguridad.
+
+"Eso es dos veces que has salvado mi vida hoy", dijo, dándole un fuerte abrazo de agradecimiento.
+
+"Blossom Bernice Breydenblach", resonó una voz desde el otro lado del abismo. Una figura con un manto grande estaba allí con un arco atado a la espalda.
+
+"Zebulón", dijo Bee. "Debería haberlo sabido".
+
+Roscoe se rascó la cabeza. "Zebulón? ¿Qué tipo de nombre es ese? ¿Qué es, un superhéroe?"
+
+"Más bien un super villano. Te lo diré en el camino, no podemos dejar que nos alcance. Debemos llegar al Sorobán Dorado antes que él", dijo Bee. Agarró el brazo de Roscoe y lo arrastró hacia el siguiente desafío.

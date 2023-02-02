@@ -4,32 +4,32 @@ use super::*;
 
 use soroban_sdk::{testutils::Accounts, BytesN, Env};
 
-/// These tests are a a lot more interesting and much more involved than the
-/// first quest, so let's dive into them a bit deeper. We have two test
-/// functions that are testing as if the contract were called by an `AccountId`,
-/// or by a `Contract`.
+/// Estos tests son mucho más interesantes y mucho más involucrados que la
+/// primera tarea, así que profundicemos en ellos un poco más. Tenemos dos
+/// funciones de prueba que están probando como si el contrato fuera llamado por una AccountId
+/// o por un Contrato.
 
-/// The first function, `test_store()`, will test the values that are being
-/// stored by our contract. This is accomplished by generating a couple user
-/// accounts, storing data as those users, and ensuring retrieved data matches
-/// what we would expect it to be. We are also checking against a keypair that
-/// hasn't stored any data, ensuring we receive Bytes of length 0 in return.
+/// La primera función, test_store(), probará los valores que se están
+/// almacenando por nuestro contrato. Esto se logra generando un par de cuentas de usuario,
+/// almacenando datos como esos usuarios y asegurándose de que los datos recuperados coincidan
+/// con lo que esperaríamos que fuera. También estamos verificando contra una pareja de claves que
+/// no ha almacenado ningún dato, asegurándonos de recibir Bytes de longitud 0 en retorno.
 #[test]
 fn test_store() {
-    // Here we register the DataStore contract in a default Soroban
-    // environment, and build a client that can be used to invoke the contract.
+    // Aquí registramos el contrato DataStore en un entorno Soroban por defecto 
+    // y construimos un cliente que se puede usar para invocar el contrato.
     let env = Env::default();
     let contract_id = env.register_contract(None, DataStoreContract);
     let client = DataStoreContractClient::new(&env, &contract_id);
 
-    // We're generating two test users, `u1` and `u2` that will be the invokers
-    // of the contract functions.
+    // Aquí generamos dos usuarios de prueba, u1 y u2, que serán los invocadores
+    // de las funciones del contrato.
     let u1 = env.accounts().generate();
     let u2 = env.accounts().generate();
 
-    // For our `u1` account, we store the `Bytes` represetation of "Hello
-    // Soroban!" using the contract's `put()` function. We then use the
-    // contracts `get()` function to ensure we receive back the expected value.
+    // Para nuestra cuenta u1, almacenamos la representación en Bytes de "Hello Soroban!" 
+    // usando la función put() del contrato. Luego usamos la función get() del contrato para asegurarnos 
+    // de recibir el valor esperado.
     client
         .with_source_account(&u1)
         .put(&bytes!(&env, 0x48656c6c6f20536f726f62616e21)); // hex value for "Hello Soroban!"

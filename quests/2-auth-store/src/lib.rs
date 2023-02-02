@@ -4,18 +4,18 @@ use soroban_sdk::{bytes, contractimpl, panic_with_error, AccountId, Address, Byt
 
 pub struct DataStoreContract;
 
-/// The `DataStoreContract` contains all the functions our contract can run when
-/// it is invoked: `put()`, `get()`, and `get_self()`
+/// El contrato DataStoreContract contiene todas las funciones que nuestro contrato puede ejecutar cuando
+/// es invocado: put(), get(), y get_self()`
 #[contractimpl]
 impl DataStoreContract {
-    /// The `put()` function takes a `value` parameter, accepting a Bytes object
-    /// for it. This argument can be supplied an array of u8 values, an integer,
-    /// or a hex-encoded string.
+    /// La función put() toma un parámetro value, aceptando un objeto Bytes
+    /// para él. Este argumento se puede proporcionar como un arreglo de valores u8, un entero,
+    /// o una cadena codificada en hexadecimal.
     pub fn put(env: Env, value: Bytes) -> Result<(), ContractError> {
-        // We are using the `panic!` macro to ensure that this function cannot
-        // be cross-called from another contract. Only an invoker of the
-        // `AccountId` type, which is the identifier of a Stellar account
-        // (ed25519 public key), can invoke this function.
+    // Estamos usando la macro panic! para asegurarnos de que esta función no pueda
+    // ser llamada desde otro contrato. Solo un invocador del tipo
+    // AccountId, que es el identificador de una cuenta Stellar
+    // (clave pública ed25519), puede invocar esta función.
         let key = match env.invoker() {
             Address::Account(account_id) => account_id,
             Address::Contract(_) => {
@@ -23,26 +23,26 @@ impl DataStoreContract {
             }
         };
 
-        // We are ensuring the provided Bytes value length is at least 11 since
-        // we want users to perform the String to Bytes conversion on their own,
-        // without passing simple values like Bytes(7). We also want to
-        // highlight some differences between Bytes and symbols (which must be
-        // 10 or fewer characters).
+    // Nos aseguramos de que la longitud del valor Bytes proporcionado sea de al menos 11, ya que
+    // queremos que los usuarios realicen la conversión de String a Bytes por su cuenta,
+    // sin pasar valores simples como Bytes(7). También queremos
+    // destacar algunas diferencias entre Bytes y símbolos (que deben ser
+    // 10 o menos caracteres).
         if value.len() <= 10 {
             panic_with_error!(&env, ContractError::InputValueTooShort)
         }
 
-        // We then use `env.storage().set()` to store the value that was passed,
-        // associating it with the contract invoker's AccountId.
+        // Luego usamos `env.storage().set()` para almacenar el valor que se pasó,
+        // asociándolo con el identificador de cuenta del invocador del contrato.
         env.storage().set(key, value);
 
-        Ok(()) // return ok if function call succeeded
+        Ok(()) // devuelve ok si la llamada a la función tuvo éxito
     }
 
-    /// The `get()` function takes an `owner` parameter, accepting an AccountId
-    /// object for it. We then use `env.storage().get()` to retrieve the value
-    /// which has been associated with the supplied AccountId. If there is no
-    /// data associated, return Bytes of length 0.
+    /// La función `get()` toma un parámetro `owner`, aceptando un objeto AccountId
+    /// para él. Luego usamos `env.storage().get()` para recuperar el valor
+    /// que se ha asociado con el AccountId proporcionado. Si no hay
+    /// datos asociados, devuelve Bytes de longitud 0.
     pub fn get(env: Env, owner: AccountId) -> Bytes {
         // Hmm. Interesting. This function doesn't enforce an `AccountId` type
         // of invoker. I guess this function *could* be invoked by another
@@ -54,14 +54,13 @@ impl DataStoreContract {
     }
 
     // !!!
-    // TODO Let's make sure someone uncomments this 👇 function before Q2 goes live or everyone will Nesho it
+    // TODO Asegúrense de que alguien descomente esta función 👇 antes de que el Q2 vaya en vivo o todos sufrirán una Nesho
     // !!!
 
-    // /// The `get_self()` function works similarly to `get()`, except `owner` is
-    // /// omitted. The AccountId to retrieve associated data for is supplied using
-    // /// a call to `env.invoker()`. Again we don't allow cross-contract
-    // /// invokations of this function. If there is no data associated, return
-    // /// Bytes of length 0.
+    // /// La función `get_self()` funciona de manera similar a `get()`, excepto que se omite `owner`. 
+    // /// Se suministra el ID de la cuenta para recuperar los datos asociados mediante una llamada a `env.invoker()`.
+    // /// De nuevo, no permitimos invocaciones cruzadas de este contrato. Si no hay datos asociados, devuelva
+    // /// Bytes de longitud 0.
     // pub fn get_self(env: Env) -> Result<Bytes, ContractError> {
     //     let key = match env.invoker() {
     //         Address::Account(account_id) => account_id,

@@ -4,8 +4,8 @@ use soroban_sdk::contracterror;
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 #[repr(u32)]
 pub enum ContractError {
-    // You need to be a user to invoke this function, Cross Contract calls are only allowed to call the `get` function
+    // Necesitas ser un usuario para invocar esta función, las llamadas de "crosscontract" solo están permitidas para llamar la función get
     CrossContractCallProhibited = 1,
-    // Input Value too short, provide at least 11 characters (bytes)
+    // El valor del input es muy corto, usa al menos 11 caracteres (bytes)
     InputValueTooShort = 2,
 }
