@@ -38,13 +38,12 @@ fn test_store() {
         bytes!(&env, 0x48656c6c6f20536f726f62616e21)
     );
 
-    // Before storing any value as the `u2` account, we check to ensure `get()`
-    // returns 0 Bytes (i.e. the account has no data to get).
+    // Antes de almacenar cualquier valor como la cuenta u2, verificamos para asegurarnos de que get()
+    // devuelva 0 Bytes (es decir, la cuenta no tiene datos para obtener).
     assert_eq!(client.get(&u2).len(), 0);
 
-    // Now, as `u2`, we invoke the `put()` function, storing the `Bytes`
-    // represetation of "Soroban Quest 2", asserting that `get()` should return
-    // the same back to us.
+    // Ahora, como u2, invocamos la función put(), almacenando la representación Bytes
+    // de "Soroban Quest 2", afirmando que get() debería devolvérnoslo de vuelta.
     client
         .with_source_account(&u2)
         .put(&bytes![&env, 0x536f726f62616e2051756573742032]); // hex value for "Soroban Quest 2"
@@ -53,8 +52,8 @@ fn test_store() {
         bytes![&env, 0x536f726f62616e2051756573742032]
     );
 
-    // Of course, we expect that the data for `u1` has not been overwritten by
-    // `u2` invoking the `put()` function.
+    // Por supuesto, esperamos que los datos para u1 no hayan sido sobrescritos por
+    // u2 al invocar la función put().
     assert_eq!(
         client.get(&u1),
         bytes![&env, 0x48656c6c6f20536f726f62616e21]
@@ -64,128 +63,127 @@ fn test_store() {
 #[test]
 #[should_panic(expected = "Status(ContractError(2))")]
 fn test_store_value_too_short() {
-    // Here we register the DataStore contract in a default Soroban
-    // environment, and build a client that can be used to invoke the contract.
+    // Aquí registramos el contrato DataStore en un entorno Soroban por defecto,
+    // y construimos un cliente que se puede usar para invocar el contrato.
     let env = Env::default();
     let contract_id = env.register_contract(None, DataStoreContract);
     let client = DataStoreContractClient::new(&env, &contract_id);
 
-    // We're generating a single test user, `u1`, which will be the invoker of
-    // the contract's `put()` function.
+    // Estamos generando un único usuario de prueba, u1, que será el invocador de
+    // la función put() del contrato.
     let u1 = env.accounts().generate();
 
-    // For our `u1` account, we attempt to store `Bytes(0, 7)` using the
-    // contract's `put()` function. We stop there, since we're just expecting
-    // the contract to panic with the argument that's too short.
+    // Para nuestra cuenta u1, intentamos almacenar Bytes (0, 7) usando la
+    // función put() del contrato. Nos detenemos allí, ya que solo esperamos
+    // que el contrato se desespere con el argumento que es demasiado corto.
     client
         .with_source_account(&u1)
         .put(&bytes![&env, 0x007]);
 }
 
-/// For the next few tests, we are going to test our DataStore contract's
-/// behavior when it is invoked from another contract. So, we are creating a
-/// very simple Smart Contract here, that we can use in them. It's quite simple,
-/// and only exists as a client to invoke the main contract's `put()`, `get()`,
-/// and `get_self()` functions.
+/// Para las próximas pruebas, vamos a probar el comportamiento del contrato DataStore
+/// cuando se invoca desde otro contrato. Así que, estamos creando un
+/// contrato inteligente muy simple aquí, que podemos usar en ellos. Es bastante simple,
+/// y solo existe como cliente para invocar las funciones put(), get() y get_self() del contrato principal.
 pub struct CallerContract;
 
 #[contractimpl]
 impl CallerContract {
-    // This function passes our supplied `data` argument to the DataStore
-    // contract's `put()` function. This is one of two panic responses we are
-    // testing for.
+    // Esta función pasa nuestro argumento de data suministrado a la función
+    // put() del contrato DataStore. Este es uno de los dos errores de pánico que estamos
+    // probando.
     pub fn try_put(env: Env, contract_id: BytesN<32>, data: Bytes) {
         let cli = DataStoreContractClient::new(&env, contract_id);
         cli.put(&data);
     }
 
-    // This function invokes the `get_self()` function from the DataStore
-    // contract. This is the second panic responses we are testing for.
+    // Esta función invoca la función get_self() del contrato DataStore. Este es
+    // el segundo error de pánico que estamos probando.
     pub fn try_get_s(env: Env, contract_id: BytesN<32>) -> Bytes {
         let cli = DataStoreContractClient::new(&env, contract_id);
         cli.get_self()
     }
 
-    // This function invokes the `get()` function from the DataStore contract,
-    // passing along an `owner` argument containing an AccountId.
+    // Esta función invoca la función get() del contrato DataStore,
+    // pasando un argumento de owner que contiene un AccountId.
     pub fn try_get(env: Env, contract_id: BytesN<32>, owner: AccountId) -> Bytes {
         let cli = DataStoreContractClient::new(&env, contract_id);
         cli.get(&owner)
     }
 }
 
-/// This test tries to invoke the `put()` method of the DataStore contract, as
-/// another smart contract. This is expected to fail since that method is only
-/// available to an `Account`, and not a `Contract`.
+/// Este test intenta invocar el método put() del contrato DataStore, como
+/// otro contrato inteligente. Se espera que esto falle ya que ese método solo está
+/// disponible para una Cuenta, y no para un Contrato.
 #[test]
 #[should_panic(expected = "Status(ContractError(1))")] // We want this test to panic since it uses a forbidden function.
 fn test_contract_store() {
-    // Similar to all Soroban tests, we create an environment, and register the
-    // DataStore contract in it.
+    // Al igual que todos los tests de Soroban, creamos un entorno y registramos el
+    // contrato DataStore en él.
     let env = Env::default();
     let contract_id_data_store = env.register_contract(None, DataStoreContract);
 
-    // We take an extra step to register our Caller contract in the environment,
-    // so we can test the cross-contract calls, using its client.
+    // Tomamos un paso adicional para registrar nuestro contrato Caller en el entorno,
+    // para que podamos probar las llamadas entre contratos usando su cliente.
     let contract_id_caller = env.register_contract(None, CallerContract);
     let caller_client = CallerContractClient::new(&env, contract_id_caller);
 
-    // We are invoking the the DataStore contract's `put()` function using our
-    // Caller contract's `try_put()` function. We expect this to panic.
+    // Invocamos la función put() del contrato DataStore usando la función
+    // try_put() de nuestro contrato Caller. Esperamos que esto cause un pánico.
     caller_client.try_put(
         &contract_id_data_store,
         &bytes![&env, 0x48656c6c6f20536f726f62616e21],
     );
 }
 
-/// This test tries to invoke the `get_self()` method of the DataStore contract,
-/// as another smart contract. This is expected to fail since that method is
-/// only available to an `Account`, and not a `Contract`.
+/// Este test intenta invocar el método get_self() del contrato DataStore,
+/// como otro contrato inteligente. Se espera que esto falle ya que ese método solo está
+/// disponible para una Cuenta, y no para un Contrato.
 #[test]
 #[should_panic(expected = "Status(ContractError(1))")] // We want this test to panic since it uses a forbidden function.
 fn test_contract_get_self() {
-    // We create an environment, and register the DataStore contract in it.
+    // Creamos un entorno y registramos el contrato DataStore en él.
     let env = Env::default();
     let contract_id_data_store = env.register_contract(None, DataStoreContract);
 
-    // We take an extra step to register our Caller contract in the environment,
-    // so we can test the cross-contract calls, using its client.
+    // Tomamos un paso adicional para registrar nuestro contrato Caller en el entorno,
+    // para que podamos probar las llamadas entre contratos usando su cliente.
     let contract_id_caller = env.register_contract(None, CallerContract);
     let caller_client = CallerContractClient::new(&env, contract_id_caller);
 
-    // We are invoking the the DataStore contract's `get_self()` function using
-    // our Caller contract's `try_get_s() function. We expect this to panic.
+    // Invocamos la función get_self() del contrato DataStore usando
+    // el método try_get_s() de nuestro contrato Caller. Esperamos que esto cause un pánico.
     caller_client.try_get_s(&contract_id_data_store);
 }
 
-/// This test tries to invoke the `get()` method of the DataStore contract, as
-/// another smart contract. This is NOT expected to panic since `get()` is
-/// exposed to being invoked from a Contract.
+/// Este test intenta invocar el método get() del contrato DataStore, como
+/// otro contrato inteligente. NO se espera que esto cause un pánico ya que get() está
+/// expuesto para ser invocado desde un Contrato.
 #[test]
 fn test_contract_get() {
-    // We create an environment, and register the DataStore contract in it. We
-    // are also creating a client for this contract, so we can invoke the
-    // `get()` function and expect some real data back (not Bytes(0)).
+    // Creamos un entorno y registramos el contrato DataStore en él. También
+    // estamos creando un cliente para este contrato, para que podamos invocar la
+    // función get() y esperar algunos datos reales (no Bytes(0)).
     let env = Env::default();
     let contract_id_data_store = env.register_contract(None, DataStoreContract);
     let client_data_store = DataStoreContractClient::new(&env, &contract_id_data_store);
 
-    // We take an extra step to register our Caller contract in the environment,
-    // so we can test the cross-contract calls, using its client.
+    // Tomamos un paso extra para registrar nuestro contrato Caller en el entorno,
+    // para que podamos probar las llamadas de contrato cruzado, utilizando su cliente.
     let contract_id_caller = env.register_contract(None, CallerContract);
     let caller_client = CallerContractClient::new(&env, contract_id_caller);
 
-    // We create an Account, `u1`, so we can invoke the `put()` function, and
-    // test against the value we store, when called from our contract later.
+    // Creamos una Cuenta, u1, para que podamos invocar la función put() y
+    // comparar contra el valor que almacenamos, cuando se llama desde nuestro contrato más tarde.
     let u1 = env.accounts().generate();
     client_data_store
         .with_source_account(&u1)
         .put(&bytes!(&env, 0x48656c6c6f20536f726f62616e21));
 
-    // We are invoking the the DataStore contract's `get()` function by using
-    // the `try_get()` method from the Caller contract. We don't expect this to
-    // panic, since the `get()` function can be invoked by a Contract. We do,
-    // however, expect our returned value to match the value we `put` before.
+    // Invocamos la función get() del contrato DataStore mediante el método
+    // try_get() desde el contrato Caller. No esperamos que esto cause una pánico,
+    // ya que la función get() puede ser invocada por un Contrato. Sin embargo,
+    // sí esperamos que nuestro valor devuelto coincida con el valor que put antes.
     let value = caller_client.try_get(&contract_id_data_store, &u1);
     assert_eq!(value, bytes!(&env, 0x48656c6c6f20536f726f62616e21));
 }
