@@ -6,7 +6,8 @@
 y escapar corriendo a esta aventura? ¿Te sientes cómodo
 completamente arruinando tu cuenta antes de entender la tarea?
 
-**En esta quest, desplegarás el contrato Quest 2 Auth Store en la Futurenet de Stellar. Luego, debes invocar con éxito la función `put()` para almacenar algún
+**En esta quest, desplegarás el contrato Quest 2 Auth Store en la Futurenet de Stellar. 
+Luego, debes invocar con éxito la función `put()` para almacenar algún
 datos en el ledger, y luego invocar con éxito la función `get()` o
 `get_self()` para recuperar esos mismos datos.**
 
@@ -85,9 +86,9 @@ datos en este contrato como esa cuenta.
 
 ### Recuperación de datos
 
-Para recuperar datos desde las entradas de registro de un contrato, está disponible para nosotros la función `Env.data().get()`. Cuando se llama con una `clave` que corresponde a datos
-que el contrato ha almacenado previamente, obtenemos el `valor` almacenado junto a él en
-retorno.
+Para recuperar datos desde las entradas de registro de un contrato, está disponible para nosotros la función `Env.data().get()`. 
+Cuando se llama con una `clave` que corresponde a datos que el contrato ha almacenado previamente, obtenemos el `valor` almacenado 
+junto a él en retorno.
 
 La función `get_self()` del contrato busca datos asociados con la cuenta del invocador. No es necesario pasar ningún argumento aquí, ya que sabemos buscar el invocador.
 

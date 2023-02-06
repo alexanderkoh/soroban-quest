@@ -1,66 +1,43 @@
-# Chapter 3
+# Capítulo 3
 
-Blossom Bernice Breydenblach and Roscoe wound through the shadowy corridor
-leading up to a large wooden door. They had lost sight of Zebulon many twists
-and turns ago, and Bee hoped it would take him a while to cross the pit. Or
-better yet, that he would fall and be eaten by lava snakes. One could dream.
+Blossom Bernice Breydenblach y Roscoe atravesaron el sombrío pasillo que conducía a una gran puerta de madera. 
+Habían perdido de vista a Zebulon hacía muchos giros y vueltas, y Bee esperaba que le tomara un tiempo cruzar el foso. O mejor aún, que caería 
+y sería devorado por serpientes de lava. 
+Uno podría soñar.
 
-Roscoe approached the door. "How do you think we open it?" he asked.
+Roscoe se acercó a la puerta. "¿Cómo crees que lo abrimos?" preguntó.
 
-Bee started to investigate the area. "There must be a key hidden somewhere. Or
-maybe it's another riddle," she said.
+Bee comenzó a investigar el área. "Debe haber una llave escondida en alguna parte. O tal vez sea otro acertijo", dijo.
 
-"Didn't we already do a door puzzle? How tedious." Roscoe leaned against the
-door, and it swung open. "Oh, that was easy."
+"¿No hicimos ya un rompecabezas de puertas? Qué tedioso". Roscoe se apoyó en la puerta y la abrió. Oh, eso fue fácil.
 
-Bee and Roscoe stepped into the room. It was small and lit by several torches.
-At the center was a table laden with a medley of containers filled with various
-substances. Some emitted steam, some were bubbling, and others lay dormant. Bee
-moved toward the table. "What in the wor–"
+Bee y Roscoe entraron en la habitación. Era pequeño y estaba iluminado por varias antorchas. 
+En el centro había una mesa cargada con una mezcla de recipientes llenos de diversas sustancias. 
+Algunos emitían vapor, otros burbujeaban y otros permanecían inactivos. Bee se acercó a la mesa. "¿Qué en el mundo–"
 
-The traitorous door slammed shut behind them. Roscoe jumped. "That was
-aggressive," he said, then gasped as a ring of fire shot up from the floor
-surrounding him, Bee, and the ominous laboratory before them. "We're trapped!"
-he cried.
+La puerta traidora se cerró de golpe detrás de ellos. Roscoe saltó. "Eso fue agresivo", dijo, y luego jadeó cuando un anillo de fuego se disparó desde el suelo que lo rodeaba a él, a Bee y al siniestro laboratorio que tenían delante. "¡Fueron atrapados!" he subido
 
-Bee walked to the table. "Look here," she said. "There's a note." She picked up
-the parchment and began to read:
+Bee se acercó a la mesa. "Mira aquí", dijo ella. Hay una nota. Cogió el pergamino y empezó a leer:
 
-" 'Around you is a blazing fire, That you may cross if you desire, A single
-potion you must devise, To touch the flames and stay alive.' "
+"'A tu alrededor hay un fuego ardiente, que puedes cruzar si lo deseas, una sola poción que debes idear, para tocar las llamas y mantenerte con vida'. "
 
-Interesting. It seems like we need to concoct something to pass through the fire
-unharmed."
+Interesante. Parece que necesitamos inventar algo para pasar ileso a través del fuego".
 
-"That sounds hard," said Roscoe.
+"Eso suena difícil", dijo Roscoe.
 
-"The merit of all things lies in their difficulty," Bee said. She looked back at
-the parchment. "There's a riddle here. I think it tells us what we need to put
-in the potion."
+"El mérito de todas las cosas radica en su dificultad", dijo Bee. Volvió a mirar el pergamino. "Aquí hay un acertijo. Creo que nos dice lo que debemos poner en la poción".
 
-She began to read again:
+Empezó a leer de nuevo:
 
-" 'Skin of an asphyxiating animal, The horizon at sunset, Drink this to become
-more thirsty, And this when you're upset.' "
+"'Piel de animal asfixiante, El horizonte al atardecer, Bebe esto para tener más sed, Y esto cuando estés molesto'. "
 
-Roscoe pondered. "Hmm, skin of an asphyxiating animal, I guess that would be
-python skin. And look, there's snakeskin here. The horizon at sunset — sunsets
-are usually orange and red, and there's a ruby here. Let's go with that. And
-drinking salt water doesn't quench your thirst. Look, here's a glass of
-seawater. And what do you drink when you're upset? I need coffee in the morning
-or else I'm a monster. There's a cup of java here. I think that's it."
+Roscoe reflexionó. "Hmm, piel de un animal asfixiante, supongo que sería piel de pitón. Y mira, aquí hay piel de serpiente. 
+El horizonte al atardecer, los atardeceres suelen ser de color naranja y rojo, y aquí hay un rubí. Vamos con eso. Y beber sal el agua no quita la sed. Mira, aquí hay un vaso de agua de mar. ¿Y qué bebes cuando estás molesto? Necesito café por la mañana o soy un monstruo. Aquí hay una taza de café. Creo que eso es todo."
 
-Bee tossed the ingredients together in an empty glass. "Roscoe, you're a
-genius!"
+Bee mezcló los ingredientes en un vaso vacío. "¡Roscoe, eres un genio!"
 
-"Won't argue with you there," Roscoe said, taking the mixture from Bee and
-draining half of it before handing it back to her. She drank the other half, and
-they proceeded to walk toward the fire. Bee took Roscoe's hand and started to
-count down.
+"No discutiré contigo allí", dijo Roscoe, tomando la mezcla de Bee y bebiendo la mitad antes de devolvérsela. Bebió la otra mitad y procedieron a caminar hacia el fuego. Bee tomó la mano de Roscoe y comenzó a contar hacia atrás.
 
-"Three, two, one," she said, then stepped through the flames, Roscoe close
-behind. The flames felt cool against her skin, and before she knew it, she was
-safely on the other side. "Let's go! We must be getting closer to the Golden
-Soroban."
+"Tres, dos, uno", dijo, y luego atravesó las llamas, con Roscoe detrás. Las llamas se sentían frías contra su piel, y antes de darse cuenta, estaba a salvo del otro lado. "¡Vamos! Debemos estar acercándonos al Golden Soroban".
 
-They continued on through the doorway and to their next adventure.
+Continuaron a través de la puerta y hacia su próxima aventura.
