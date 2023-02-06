@@ -2,15 +2,15 @@
 
 ## TL;DR
 
-You again!? You're back here looking for the quick task? Well, alright, if you
-think you're really ready for it. Good luck!
+Tu nuevamente!? ¿Regresaste aquí buscando la tarea rápida? 
+Bien, está bien, si crees que realmente estás listo para ello. ¡Buena suerte!
 
-**For this quest, we have already deployed the `ReverseEngineerContract` using
-the account `GAC7HE4PQWI7H34JQN6QLQ7Y7NTAUZDWJZ4SJ6GXVC4K2DN7N65K5NLI`. You must
-*find* the `contractId` for this contract! Then you must invoke the correct
-function in that contract, while providing the correct argument.**
+**Para esta misión, ya hemos desplegado el contrato ReverseEngineerContract 
+usando la cuenta GAC7HE4PQWI7H34JQN6QLQ7Y7NTAUZDWJZ4SJ6GXVC4K2DN7N65K5NLI. 
+¡Debes encontrar el contratoId para este contrato! Luego, debe invocar la función correcta en ese contrato, proporcionando el argumento correcto.**
 
-## Table of Contents <!-- omit in toc -->
+
+## Tabla de Contenidos <!-- omit in toc -->
 
 - [TL;DR](#tldr)
 - [How to Play](#how-to-play)
@@ -26,86 +26,67 @@ function in that contract, while providing the correct argument.**
 
 ## How to Play
 
-If you missed out on our previous quests, or you just need a refresher, we have
-some (pretty extensive) instructions for the *mechanics* of completing these
-quests (generating keypairs, checking your work, etc.).
-
-All that information [can be found here][how-to-play] if you need to use those
-instructions again.
+Si te perdiste de nuestras misiones anteriores, o necesitas un recordatorio, tenemos algunas 
+instrucciones *mecánicas* (como generar parejas de claves, verificar tu trabajo, etc.) para completar estas misiones. 
+Toda esa información está [aquí][how-to-play] si necesitas usar esas instrucciones nuevamente.
 
 ## The Task at Hand
 
-I hear you: "Let's get to the quest!!" I love your enthusiasm! But, I want to
-~~implore~~ beg you to do one thing first: Read the code!
+Oigo que quieres: "¡Vamos a la aventura!" ¡Me encanta tu entusiasmo! 
+Pero, quiero ~~suplicar~~ implorarte que hagas una cosa primero: ¡Lee el código!
 
 ### Explore the Contract Code
 
-Ok, so we've been at this a couple times before. You might feel like you're
-*starting*  to understand the order of things, and how this all works. **Or**,
-you might feel like you're totally lost, and you just want someone else to give
-you the answer.
+Ok, así que hemos estado en esto un par de veces antes. Puedes sentir que estás *empezando* a entender el orden de las cosas y cómo todo esto funciona. **O**, puedes sentir que estás totalmente perdido y simplemente quieres que alguien más te dé la respuesta.
 
-Whatever you're feeling, I want to put this in the most emphasized voice I can:
-**Read the code that is contained within `src/lib.rs` and `src/test.rs`!** Read
-it. The whole thing. Comments and all. Everything!
+Cualquiera que sea tu sentimiento, quiero poner esto en la voz más enfatizada que pueda: **¡Lee el código que está contenido dentro de `src/lib.rs` y `src/test.rs`!** Lee todo. ¡Todos los comentarios y todo! Todo.
 
-Trust me, you will want to read the contract for this one (all of the quests,
-honestly). Sure, reading the code will help you understand the contract. Yes,
-that's what we're trying to do. **But**, it will also answer many of the
-questions you'll come up with as you work on this task.
+Confía en mí, querrás leer el contrato para esto (todas las misiones, honestamente). Claro, leer el código te ayudará a entender el contrato. Sí, eso es lo que estamos tratando de hacer. **Pero**, también responderá muchas de las preguntas que tendrás mientras trabajas en esta tarea.
 
 ### Using Soroban-CLI to Decode XDR
 
-A term you may already be familiar with is "XDR" which stands for *eXternal Data
-Representation*. So much of what happens on the Stellar network is done in XDR
-format: transactions, ledger data, history, operation results, and the list goes
-on. XDR is a compact, network-efficient, binary format. While it's great for
-many things, it's not human readable, so it can be pretty confusing.
+Un término con el que puedes estar familiarizado es "XDR", que significa Representación de Datos Externos. 
 
-Thankfully, the [Soroban CLI][soroban-cli] makes it pretty easy to get decoded,
-useful, and understandable output from supplied XDR. For example, when a
-transaction is submitted to the Network, it's submitted in XDR format. Here is
-how you could use the `soroban` cli to decode a Friendbot transaction XDR into a
-more human-readable format.
+Gran parte de lo que ocurre en la red Stellar se realiza en formato XDR: transacciones, datos del libro mayor, historial, 
+resultados de operaciones y la lista sigue. XDR es un formato binario compacto y eficiente en la red. Si bien es excelente 
+para muchas cosas, no es legible para humanos, por lo que puede ser bastante confuso.
+
+Afortunadamente, la [Soroban CLI][soroban-cli] hace que sea bastante fácil 
+obtener una salida decodificada, útil y comprensible de XDR proporcionado. Por ejemplo, cuando 
+se envía una transacción a la Red, se envía en formato XDR. Aquí hay un ejemplo de cómo usar el 
+comando `soroban` para decodificar una transacción de Friendbot XDR en un formato más legible para humanos.
 
 ```bash
 soroban xdr dec --type TransactionEnvelope --xdr AAAAAgAAAABhi8yJmyMMTBza5emErFGm+xbj3PeggjF1g0CVlG+jOQAPQkAAAFRyAAAABgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAABB90WssODNIgi6BHveqzxTRmIpvAFRyVNM+Hm2GVuCcAAAAAAAAAABwLBiyzjjMVWCiToDYJPGrLhVy4+Ndx26l2x28bngMAwAAABdIdugAAAAAAAAAAAKUb6M5AAAAQDqxm6rPqDMypQWNAyZY17x5YG+cEuhZ8kqD868mMskTKE0jxD3lTY73gddFdmZZZ4Tit2pwQOtXI7w+M4OGoAiGVuCcAAAAQO0kX9PUv7sLyAaGvyw4l8NR86S5Pj9erMIOj0u2qmEgDW8YRQERFH3JkF/GX2B8NMy8NCd5/KWgj9b3iahk+QQ= --output json
 ```
 
-I'll omit the output here, in an attempt to keep this README un-cluttered. But,
-if you were to run the above command, you'd see a JSON-formatted representation
-of a transaction creating an account with a starting balance of 10,000XLM
-(futurenet XLM, of course).
-
-There are many different "types" you could use the `soroban` cli to decode. If
-you run `soroban xdr dec --help` in your terminal, you'll see all the different
-options that are available to you.
+Omitiré la salida aquí, en un intento de mantener este README sin desorden. 
+Pero, si ejecutaras el comando anterior, verías una representación en formato JSON de una 
+transacción que crea una cuenta con un saldo inicial de 10,000 XLM (por supuesto, futurnet XLM). 
+Existen muchos diferentes "tipos" que puedes utilizar el cli de soroban para decodificar. 
+Si ejecutas `soroban xdr dec --help` en tu terminal, verás todas las diferentes opciones que están disponibles para ti.
 
 ### How do I find a `contractId`?
 
-Have you ever heard the expression "There is more than one way to skin a cat"? I
-know, it's nasty and gross! I don't know who wants to have even *one* way to
-skin a cat!! Anyway, I'm getting sidetracked...
+¿Alguna vez has escuchado la expresión "Hay más de una manera de pelar un gato"? 
+Sé, es desagradable y asqueroso! ¡No sé quién querría tener *una* manera de pelar un gato!! 
+De todos modos, me estoy desviando ...
 
-There are a few different ways you could find a `contractId` for an already
-deployed contract. All of them involve decoding XDR, and that can be done using
-the soroban-cli, or the Stellar Laboratory, or RunKit, or you could come up with
-your own way to decode/encode the base64 as needed. But they all start with
-finding the correct XDR to decode.
+Existen algunas maneras diferentes de encontrar un `contractId` para un contrato ya desplegado. 
+Todos ellos implican decodificar XDR y eso se puede hacer con soroban-cli, el Laboratorio Estelar, 
+RunKit o podrías encontrar tu propia manera de decodificar / codificar la base64 según sea necesario. 
+Pero todos comienzan encontrando el XDR correcto para decodificar.
 
-The following sensible approach to finding a `contractId` will start by finding
-a relevant `operation` for the account in question, and then the corresponding
-`transaction`. This definitely isn't the only way it could be done (it's not
-even the quickest or easiest), but it *is* straight-forward, and easy to follow.
+La siguiente abordaje sensato para encontrar un 'contractId' comenzará encontrando una 'operación' 
+relevante para la cuenta en cuestión, y luego la correspondiente 'transacción'. 
+Esto definitivamente no es la única manera de hacerlo (ni siquiera es la más rápida o fácil), pero sí es directa y fácil de seguir.
 
 #### **Find an Operation**
 
-We begin by heading to the [Stellar Lab][lab] (using futurenet), and we'll click
-on **Explore Endpoints** -> **Operations** -> **Operations for Account**. Enter
-the public key of an account that exists on futurenet (the example here shows an
-account that was used to deploy and invoke the `HelloWorld` Contract from Quest
-1), and click **Submit**. (If you prefer viewing the JSON output, you can get
-that [here][ops].)
+Comencemos dirigiéndonos al [Laboratorio Estelar][lab] (utilizando futurenet), y hacemos clic
+en **Explore Endpoints** -> **Operations** -> **Operations for Account**. Introduzca
+la clave pública de una cuenta existente en futurenet (el ejemplo aquí muestra una
+cuenta que se usó para implementar y invocar el contrato `HelloWorld` desde la primera misión), y haga clic en **Aceptar**. (Si prefiere ver la salida JSON, puede obtenerla [aquí][ops]).
 
 <details>
 <summary>View screenshot</summary>
@@ -114,13 +95,12 @@ that [here][ops].)
 
 </details>
 
-**Reminder**: You are looking for a contract that was deployed by this address:
+**Recordatorio**: Estás buscando un contrato desplegado por esta dirección:
 `GAC7HE4PQWI7H34JQN6QLQ7Y7NTAUZDWJZ4SJ6GXVC4K2DN7N65K5NLI`.
 
-When the results appear, we're going to look for an operation of the "type"
-`invoke_host_function`, **and** with a "function" field of
-`HostFunctionHostFnCreateContractWithSourceAccount` (i.e. this operation is an
-account uploading/deploying a smart contract). Our example operation:
+Cuando aparezcan los resultados, buscaremos una operación del "tipo" 
+`invoke_host_function` y con un campo "función" de HostFunctionHostFnCreateContractWithSourceAccount (es decir, 
+esta operación es una cuenta cargando/implantando un contrato inteligente). Nuestra operación de ejemplo:
 
 ```json5
 {
