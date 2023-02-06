@@ -1,75 +1,55 @@
-# Quest 6 - Asset Interop <!-- omit in toc -->
+# Quest 6 - Interoperabilidad de activos <!-- omit in toc -->
 
 ## TL;DR
 
-Big day, huh!? Final Quest in our inaugural series of Soroban Quest! This has
-been so awesome right! And there's only more greatness to come so stay tuned!
+¡Gran día, ¿verdad! ¡La última misión en nuestra serie inaugural de Soroban Quest! Ha sido genial ¿verdad? Y solo habrá más grandeza por venir, así que mantente atento.
 
-If you're looking for the _very_ next thing be sure to check out and contribute
-to the [Sorobanathon][sorobanathon].
+Si buscas la siguiente cosa, asegúrate de revisar y contribuir en [Sorobanathon].
 
-Today's Quest is a banger! It will not only challenge you, but will also
-show you some of the **amazing** stuff that's possible in this brave new
-Soroban-ified world! Now, it's a doozy so you're going to _really want_ to read
-through this document. But, here's the short-n-sweet instructions, if you want
-to jump ahead and muck things up.
+¡La misión de hoy es impactante! No solo te desafiará, sino que también te mostrará algunas cosas **increíbles** que son posibles en este nuevo y valiente mundo Soroban-ificado. Ahora, es un poco difícil, por lo que realmente querrás leer a través de este documento. Pero, aquí están las instrucciones cortas y dulces, si quieres saltarte y arruinar las cosas.
 
-There are two relevant accounts today:
+*Hay dos cuentas relevantes hoy:
 
-- `Parent_Account` will be your Quest Account, (what you are given when you run
-  `sq play {n}`) and will be used to deploy an `AllowanceContract` contract.
-- `Child_Account` will be a secondary account which will interact with
-  your contract. Create and fund this Futurenet account on your own.
+* `Parent_Account` será su Cuenta de Búsqueda, (lo que se le da cuando ejecuta`sq play {n}`) y se usará para desplegar un contrato`AllowanceContract`.
+* `Child_Account` será una cuenta secundaria que interactuará con
+  su contrato. Cree y financie esta cuenta de Futurenet por su cuenta.
 
-**For our finale quest, you must build and deploy the `AllowanceContract`
-contract using your Quest Account (`Parent_Account`). Then use that same account
-to import XLM from "Classic" Stellar into Soroban. Next approve your deployed
-contract to act as a proxy enabling it to transfer XLM from the parent to the
-child. Then, using either account, you must withdraw an allowance to the
-`Child_Account` using the contract deployed by the `Parent_Account`. Finally,
-export that allowance back into the `Child_Account`'s "Classic" Stellar
-account.**
+**Para nuestra búsqueda final, debe construir y desplegar el contrato
+`AllowanceContract` utilizando su Cuenta de Búsqueda (`Parent_Account`). Luego, use esa misma cuenta
+para importar XLM de "Classic" Stellar a Soroban. A continuación, apruebe su contrato desplegado para actuar como un proxy que le permita transferir XLM del padre al
+niño. Luego, utilizando cualquiera de las cuentas, debe retirar una asignación al
+`Child_Account` usando el contrato desplegado por `Parent_Account`. Finalmente,
+exporta esa asignación de nuevo a la cuenta de "Classic" Stellar de `Child_Account`.**
 
-## Table of Contents <!-- omit in toc -->
+## Tabla de contenido <!-- omitir en la tabla de contenido -->
 
-- [TL;DR](#tldr)
-- [How to Play](#how-to-play)
-- [The Task at Hand](#the-task-at-hand)
-  - ["Classic" Stellar Assets vs. Soroban "Smart" Tokens](#classic-stellar-assets-vs-soroban-smart-tokens)
-  - [The Built-In Token Contract](#the-built-in-token-contract)
-  - [Yeah, but How do I Use That Built-In Token Contract?](#yeah-but-how-do-i-use-that-built-in-token-contract)
-  - [Native XLM on Soroban](#native-xlm-on-soroban)
-  - [Back to Your Quest](#back-to-your-quest)
-- [Further Reading](#further-reading)
-- [Still Stuck?](#still-stuck)
+* [TL;DR](https://chat.openai.com/chat#tldr)
+* [Cómo jugar](https://chat.openai.com/chat#c%C3%B3mo-jugar)
+* [La tarea a mano](https://chat.openai.com/chat#la-tarea-a-mano)
+  * [Activos &#34;Classic&#34; Stellar vs. Tokens &#34;Inteligentes&#34; Soroban](https://chat.openai.com/chat#activos-classic-stellar-vs-tokens-inteligentes-soroban)
+  * [El contrato incorporado de Tokens](https://chat.openai.com/chat#el-contrato-incorporado-de-tokens)
+  * [Sí, pero ¿cómo uso ese contrato incorporado de Tokens?](https://chat.openai.com/chat#s%C3%AD-pero-c%C3%B3mo-uso-ese-contrato-incorporado-de-tokens)
+  * [XLM nativo en Soroban](https://chat.openai.com/chat#xlm-nativo-en-soroban)
+  * [Vuelta a tu misión](https://chat.openai.com/chat#vuelta-a-tu-misi%C3%B3n)
+* [Lectura adicional](https://chat.openai.com/chat#lectura-adicional)
+* [¿Sigues atascado?](https://chat.openai.com/chat#sigues-atascado)
 
-## How to Play
+## Cómo jugar
 
-If you missed out on our previous quests, or you just need a refresher, we have
-some (pretty extensive) instructions for the _mechanics_ of completing these
-quests (generating keypairs, checking your work, etc.).
+Si te perdiste de nuestras misiones anteriores o solo necesitas un repaso, tenemos
+instrucciones (bastante extensas) para las *mecánicas* de completar estas
+misiones (generar claves, revisar tu trabajo, etc.).
 
-All that information [can be found here][how-to-play] if you need those
-instructions again.
+Toda esta información [se puede encontrar aquí][how-to-play] si necesitas esas
+instrucciones nuevamente.
 
-## The Task at Hand
+## La tarea a realizar
 
-For a moment, put yourself in the position of a parent, sending their child out
-into the world to face the challenges of college and/or the workforce. I know,
-it's emotional. That's ok. You don't want to send them off with nothing. You
-want to give them some kind of confidence they won't have an empty stomach at
-the end of the day, no matter what happens.
+Por un momento, ponte en la posición de un padre que envía a su hijo al mundo para enfrentar los desafíos de la universidad y/o el trabajo. Lo sé, es emocionante. Eso está bien. No quieres enviarlos sin nada. Quieres darles algo de confianza de que no tendrán un estómago vacío al final del día, sin importar lo que suceda.
 
-So, you're setting up an allowance contract for them. You will deploy a contract
-that will be a one-time action on your part, but will make available to them a
-steady trickle of resources should they ever have need. This approach gives us
-two very powerful wins: _they_ can't withdraw everything at once, but _you_
-don't have to remember to make transfers all the time!
+Entonces, estás creando un contrato de asignación para ellos. Desplegarás un contrato que será una acción única por tu parte, pero que les estará disponible un flujo constante de recursos en caso de que alguna vez los necesiten. Este enfoque nos da dos victorias muy poderosas: *ellos* no pueden retirar todo de una sola vez, pero *tú* no tienes que recordar hacer transferencias todo el tiempo.
 
-Back in reality, we're ready to talk assets! But, first, we _have_ to say it one
-last time, **read the code!** This contract is relatively complex. We won't make
-you fiddle with it today, but there's no better way to understand what's
-happening than to actually _read_ it. Seriously.
+De vuelta en la realidad, estamos listos para hablar de activos! Pero, primero, tenemos que decirlo una última vez, **leer el código!** Este contrato es relativamente complejo. No te haré manipularlo hoy, pero no hay mejor manera de entender lo que está sucediendo que leerlo realmente. En serio.
 
 ### "Classic" Stellar Assets vs. Soroban "Smart" Tokens
 
@@ -81,65 +61,36 @@ happening than to actually _read_ it. Seriously.
 > steps, terminology, architecture, etc. used in today's quest are subject to
 > change in the future.
 
-One of the defining characteristics of the "Classic" Stellar network is that
-assets are a first-class citizen. They are easy to create, cheap to
-use/transfer/trade, and useful for many use-cases. There also exists an
-extensive set of authorization tools that asset issuers can use to control who
-can acquire, use, or retain those assets. We won't spend _too_ much time here,
-because you are probably already up-to-speed here. If you need a refresher the
-[developer documentation][docs-assets] and our own [Stellar Quest
-Learn][sq-learn] course has **loads** of information about assets. For now, just
-remember that the `native` asset on Stellar (both "Classic" and Soroban) is the
-[Lumen][lumens]. It's identified using the asset code `XLM`.
+Uno de las características definitorias de la red "Clásica" de Stellar es que los activos son un ciudadano de primera clase. Son fáciles de crear, baratos de usar/transferir/comerciar y útiles para muchos usos. También existe un extenso conjunto de herramientas de autorización que los emisores de activos pueden usar para controlar quién puede adquirir, usar o retener esos activos. No pasaremos demasiado tiempo aquí, porque probablemente ya estés al día aquí. Si necesitas un repaso, la [documentación para desarrolladores][docs-assets] y nuestro propio curso [Stellar Quest Learn][sq-learn] tienen **mucha** información sobre activos. Por ahora, solo recuerda que el activo `nativo` en Stellar (tanto "Clásico" como Soroban) es el [Lumen][lumens]. Se identifica usando el código de activo `XLM`.
 
-As Soroban development continues, one of the _key_ requirements is that assets
-issued on "Classic" Stellar can be used and incorporated into Soroban. It's even
-[one of the FAQs][assets-faq]! This interoperability is facilitated by using the
-`import` and `export` functions that exist in [the built-in token
-contract](#the-built-in-token-contract), which allows assets issued on "Classic"
-Stellar to be brought into play on Soroban. (Note assets minted on Soroban
-cannot be exported to a "Classic" Stellar asset.)
+A medida que continúa el desarrollo de Soroban, uno de los requisitos clave es que los activos emitidos en "Stellar Clásico" puedan ser utilizados e incorporados en Soroban. ¡Es incluso [una de las preguntas frecuentes][assets-faq]! Esta interoperabilidad se facilita mediante el uso de las funciones `importar` y `exportar` que existen en [el contrato de token incorporado](https://chat.openai.com/chat#the-built-in-token-contract), lo que permite que los activos emitidos en "Stellar Clásico" entren en juego en Soroban. (Tenga en cuenta que los activos acuñados en Soroban no se pueden exportar a un activo de "Stellar Clásico").
 
-### The Built-In Token Contract
+### El contrato de token incorporado
 
-Soroban development regarding Assets involves an effort to decide what a
-"Standardized Asset" looks like in a smart contract context. These decisions,
-and related discussions, are recorded in [CAP-0046-06][cap-46-6]. If you're
-familiar with Ethereum, this proposal tries to follow an ERC-20 model, where
-applicable.
+El desarrollo de Soroban en cuanto a activos implica un esfuerzo por decidir cómo se ve un "activo estandarizado" en un contexto de contrato inteligente. Estas decisiones y discusiones relacionadas se registran en [CAP-0046-06][cap-46-6]. Si estás familiarizado con Ethereum, esta propuesta intenta seguir un modelo ERC-20 donde sea aplicable.
 
-The [Built-In Token Contract][token-contract] is an implementation of the
-CAP-46-6 proposal. It can be used to to create a new token on Soroban, or to
-wrap a "Classic" asset and transfer it to Soroban. For today, we'll be using it
-to wrap and import Lumens from "Classic" Stellar. This built-in token contract
-implements a [token interface][built-in-interface] that is quite feature-full.
-The most notable functions you'll need from it today are `import`, `approve`,
-and `export`.
+El [contrato de token incorporado][token-contract] es una implementación de la propuesta CAP-46-6. Se puede utilizar para crear un nuevo token en Soroban o para envolver un activo "Clásico" y transferirlo a Soroban. Hoy, lo usaremos para envolver e importar Lumens desde "Stellar Clásico". Este contrato de token incorporado implementa una [interfaz de token][built-in-interface] que es bastante completa. Las funciones más importantes que necesitará hoy son `importar`, `aprobar` y `exportar`.
 
-### Yeah, but How do I Use That Built-In Token Contract?
+### ¡Sí, pero ¿cómo uso ese contrato de token incorporado?
 
-> It should be noted that a Soroban token developer can choose to implement any
-> interface they choose. There isn't any _requirement_ to implement everything
-> from CAP-46-6, but doing so does allow a token to interoperate with other
-> tokens which _are_ compliant with CAP-46-6. You can learn more about the
-> [suggested token interface][token-interface] in the Soroban docs.
+> Hay que tener en cuenta que un desarrollador de tokens Soroban puede elegir implementar cualquier
+> interfaz que elijan. No hay ninguna *requisito* de implementar todo
+> desde CAP-46-6, pero hacerlo permite que un token sea interoperable con otros
+> tokens que *sí* cumplen con CAP-46-6. Puedes aprender más sobre la
+> [interfaz de token sugerida][token-interface] en los documentos de Soroban.
 
-So, how do we actually make one of them tokens, then? There are a few methods
-available to us. Let's (briefly) look at them.
+Entonces, ¿cómo realmente hacemos uno de esos tokens? Hay varios métodos
+disponibles para nosotros. Echemos un vistazo (brevemente) a ellos.
 
-1. (Spicy 🌶️🌶️🌶️) You _could_ write the whole thing from scratch, implementing
-   whatever features, functions, and fun suit your needs. That would take a lot
-   of work, but you could do it. I won't stop you.
-
-2. (Medium 🌶️🌶️) There's a `create.py` script in the `py-scripts/` directory here
-   that will do a lot of the heavy lifting for you. This can be used and adapted
-   to match whatever asset you're trying to create. It's a fantastic
-   starting point.
-
-3. (Mild 🌶️) Fun fact, the Soroban CLI has a handy little helper command built
-   right into it that will (we promise, we're not making this up) do
-   _everything_ for you! You don't have to code anything, just run the command a
-   single time, and the contract is **deployed**. You could use it like this:
+1. (Picante 🌶️🌶️🌶️) Podrías escribir todo desde cero, implementando
+   cualquier característica, función y diversión que satisfagan tus necesidades. Eso tomaría mucho
+   trabajo, pero podrías hacerlo. No te lo impediré.
+2. (Medio 🌶️🌶️) Hay un script`create.py` en el directorio`py-scripts/` aquí
+   que hará mucho del trabajo pesado para ti. Esto se puede usar y adaptar
+   para adaptarse al activo que estás intentando crear. Es un fantástico
+   punto de partida.
+3. (Suave 🌶️) Hecho divertido, la CLI de Soroban tiene una pequeña ayuda incorporada en sí misma que (te prometemos, no estamos haciendo esto) hará*todo* por ti. No tienes que codificar nada, solo ejecuta el comando una
+   vez, y el contrato está**desplegado** . Lo puedes usar así:
 
 ```bash
 soroban token wrap --asset QUEST6:GBCXQUEPSEGIKXLYODHKMZD7YMTZ4IUY3BYPRZL4D5MSJZHHE7HG6RWR
@@ -151,21 +102,13 @@ output:
 soroban token wrap --asset native
 ```
 
-It should be noted using the Soroban CLI to deploy a wrapped asset will work
-exactly one time per asset (per network). So, the `native` asset is already
-deployed to the Futurenet, and trying to wrap that again (on the Futurenet) will
-return an error rather than a `contractId`.
+Se debe tener en cuenta que el uso de la CLI de Soroban para implementar un activo envolvente funcionará solo una vez por activo (por red). Por lo tanto, el activo nativo ya está implementado en Futurenet, y intentar envolverlo de nuevo (en Futurenet) devolverá un error en lugar de una `contractId`.
 
-> It should _also_ be noted you don't need to deploy or wrap any tokens or
-> assets for this quest. We just put this here for fun!
+> También se debe señalar que no es necesario implementar ni envolver ningún token ni activo para esta misión. Solo lo ponemos aquí por diversión!
 
-### Native XLM on Soroban
+### XLM nativo en Soroban
 
-Speaking of the `native` asset: One of the cool things about Soroban's built-in
-token contract is that even the native XLM token utilizes it to bring XLM onto
-Soroban. To use it, we just need to figure out the `contractId` that we should
-invoke. That can be done easily enough with one of the Stellar SDKs (below,
-we're using Python):
+Hablando del activo "nativo": Una de las cosas interesantes sobre el contrato de token incorporado de Soroban es que incluso el token XLM nativo lo utiliza para llevar XLM a Soroban. Para usarlo, solo necesitamos descubrir el "contractId" que debemos invocar. Esto se puede hacer fácilmente con uno de los SDKs de Stellar (a continuación, estamos usando Python)
 
 ```python
 import hashlib
@@ -183,92 +126,46 @@ contract_id = hashlib.sha256(data.to_xdr_bytes()).hexdigest()
 print(f"Contract ID: {contract_id}")
 ```
 
-An expanded version of the above script, as well as some other _very_ handy
-Python scripts (big shoutout to [Jun Luo (@overcat)][overcat]) in the
-`py-scripts/` directory. They deal with all kinds of Soroban tokens tasks:
-importing/exporting balances, creating a wrapped "Classic" token, finding
-contract IDs, etc.
+Una versión expandida del script anterior, así como algunos otros scripts de Python muy útiles (un gran grito a [Jun Luo (@overcat)][overcat]) en el directorio `py-scripts /`. Se ocupan de todo tipo de tareas de tokens Soroban: importación / exportación de saldos, creación de un token "Clásico" envolvente, encontrar identificadores de contrato, etc.
 
-As per our tl;dr at the top, this contract will need to be invoked _at least_
-three times:
+Según nuestro tl; dr en la parte superior, este contrato deberá invocarse al menos tres veces:
 
-1. The `Parent_Account` will need to `import` the native asset.
-2. The `Parent_Account` will need to `approve` the `AllowanceContract` as a
-   proxy spender.
-3. The `Child_Account` will (eventually) need to `export` their allowance back
-   to "Classic" Stellar.
+1. La cuenta`Parent_Account` necesitará`importar` el activo nativo.
+2. La cuenta`Parent_Account` deberá`aprobar` el`AllowanceContract` como un pagador proxy.
+3. La cuenta`Child_Account` (eventualmente) necesitará`exportar` su asignación de nuevo a Stellar "Clásico".
 
-Don't forget to look into the [Built-In Token Interface][built-in-interface] to
-figure out which arguments you'll need to use when making those invocations. You
-remember how to format those arguments, don't you? What!? You don't?! Ok, ok,
-ok. It's gonna be fine. Check back to [Quest 4](../4-cross-contract/README.md)
-and [Quest 5](../5-custom-types/README.md) for a recap.
+No te olvides de investigar la [Interfaz de token incorporada][built-in-interface] para averiguar qué argumentos debes usar al hacer esas invocaciones. ¿Recuerdas cómo formatear esos argumentos, verdad? ¿Qué!? ¿No lo haces?! Bueno, bueno, bueno. Todo estará bien. Vuelve a [Quest 4](https://chat.openai.com/4-cross-contract/README.md) y [Quest 5](https://chat.openai.com/5-custom-types/README.md) para un repaso.
 
 <sup><sub><sup><sub>
-or maybe explore the story for a clue
+o tal vez explora la historia para una pista
+
 </sup></sub></sup></sub>
 
-### Back to Your Quest
+### Vuelve a tu misión
 
-Ok, so we've gone through a bunch of theory, and looked at how assets can (or
-cannot) interact and transfer between "Classic" Stellar and Soroban. Now, it's
-time to let you go and bring this thing home!
+Bueno, hemos visto una gran cantidad de teoría y cómo los activos pueden (o no) interactuar y transferirse entre Stellar clásico y Soroban. Ahora es hora de que vayas y lo hagas realidad.
 
-If you forgot what your task is, here it is again:
+Si olvidaste cuál es tu tarea, aquí está de nuevo:
 
-- [ ] Deploy the `AllowanceContract` as the `Parent_Account`
-- [ ] Invoke the `init` function of the `AllowanceContract`
-- [ ] `import` some XLM into the `Parent_Account` from their "Classic" Stellar
-  account
-- [ ] `approve` the `AllowanceContract` to make proxy transfers from the
-  `Parent_Account` to the `Child_Account`
-- [ ] Invoke the `withdraw` function of the `AllowanceContract` with either the
-  `Child_Account` or `Parent_Account`
-- [ ] `export` some XLM from the `Child_Account` to their "Classic" Stellar
-  account
+* [ ] Desplegar el contrato`AllowanceContract` como la cuenta`Parent_Account`
+* [ ] Invocar la función`init` del contrato`AllowanceContract`
+* [ ]`importar` algunos XLM en la cuenta`Parent_Account` desde su cuenta de Stellar clásico
+* [ ]`aprobar` el contrato`AllowanceContract` para hacer transferencias de proxy de la cuenta`Parent_Account` a la cuenta`Child_Account`
+* [ ] Invocar la función`withdraw` del contrato`AllowanceContract` con la cuenta`Child_Account` o la cuenta`Parent_Account`
+* [ ]`exportar` algunos XLM desde la cuenta`Child_Account` a su cuenta de Stellar clásico
 
-While performing the above steps, you'll want to consider the amount of XLM
-you're using along the way. In Soroban, most assets are quantified using
-[Stroop][stroop]s (that is, one ten-millionth of the asset). For example, if you
-want to _import_ 1 XLM, you'll need to supply `10000000`, `10_000_000` or `1 *
-10**7` Stroops as an argument in your invocation.
+Al realizar los pasos anteriores, querrás considerar la cantidad de XLM que estás usando en el camino. En Soroban, la mayoría de los activos se cuantifican utilizando [Stroop]s (es decir, una décima millonésima del activo). Por ejemplo, si quieres importar 1 XLM, necesitarás suministrar `10000000`, `10_000_000` o `1 * 10**7` Stroops como argumento en tu invocación.
 
-Additionally, the astute observer might notice an interesting separation between
-the Parent's "Classic" Stellar balance and the approved allowance the contract
-has access to at any given time. For example you could `import` 100,000 XLM into
-the Parent account but only `approve` a "first tranche" to the contract of
-10,000 XLM and then the contract – depending on the `init` arguments passed –
-might `withdraw` 5,000 XLM during each successful invocation. The contract will
-only ever be able to proxy from the parent to the child as per the contract
-arithmetic but this flexibility allows the parent to more safely and sensibly
-control the flow of funds. All the levers! You **are** the man behind the
-curtain!
+Finalmente, dada esta flexibilidad, se debe tener un gran cuidado al llamar a
+las variadas invocaciones, ya que no deseas habilitar una `retirada` que sea
+mayor que el permiso disponible del contrato. Elija sabiamente sus números,
+mi amigo.
 
-Finally, given this flexibility, great care should be taken when calling the
-various invocations, as you don't want to enable a `withdraw` to take place that
-would be greater than the contract's available allowance. Choose your numbers
-wisely, my friend.
-
-> If you're really confused about the units, digits, and numbers to use, read
-> through the `src/test.rs` file for some inspiration and to see which numbers
-> we used during development.
+> Si realmente estás confundido sobre las unidades, dígitos y números a usar, lee el archivo `src/test.rs` para obtener algo de inspiración y ver qué números usamos durante el desarrollo.
 
 ## Further Reading
 
-- **[Core Advancement Proposal 0046-06][cap-46-6]** contains more information
-  than you probably want about how the asset interoperability is intended to
-  work. These "CAP" documents are excellent resources for discovering not only
-  _how_ something on Stellar works, but also _why_ it is designed that way.
-  Check it out some time.
-- The **[Built-In Token Contract][token-contract]** article in the Soroban
-  documentation is a probably less intimidating resource. It has so much more
-  good stuff than we could even mention here. This is definitely one to read
-  through.
-- The **[Timelock][timelock]**, **[Single Offer Sale][single-offer]**, and
-  **[Liquidity Pool][liquidity-pool]** example contracts are a great place to
-  learn more about how assets on Soroban can interact with each other, and how
-  they could be interacted with. These are great examples for a real world use
-  of the concepts we've discussed today.
+
 - **[Assets][docs-assets]** in Stellar are an enormous part of the network
   architecture. If you're unfamiliar with how assets work with "Classic"
   Stellar, than the Developer Documentation has all the information you'll need.
@@ -284,26 +181,27 @@ wisely, my friend.
   as a `Ledger` data structure. There is pretty significant stuff to know, so
   here's the relevant **[documentation page][sdk-ledger]** all about it!
 
+## Lectura Adicional
+
+* **[Propuesta Avanzada de Núcleo 0046-06][cap-46-6]** contiene más información
+  de la que probablemente quieras sobre cómo se pretende que funcione la
+  interoperabilidad de activos. Estos documentos "CAP" son excelentes recursos
+  para descubrir no solo*cómo* funciona algo en Stellar, sino también*por qué*
+  está diseñado de esa manera. Echá un vistazo en algún momento.
+* El artículo**[Contrato de Tokens Integrado][token-contract]** en la
+  documentación de Soroban es un recurso probablemente menos intimidante. Tiene
+  mucho más material bueno de lo que incluso podríamos mencionar aquí. Este es
+  definitivamente uno para leer de principio a fin.
+* Los contratos de ejemplo de**[Timelock]** ,**[Single Offer Sale][single-offer]**
+  y**[Liquidity Pool][liquidity-pool]** son un gran lugar para aprender más
+  sobre cómo los activos en Soroban pueden interactuar entre sí y cómo podrían
+  ser interactuados. Estos son excelentes ejemplos para un uso real de los
+  conceptos que hemos discutido hoy.
+* **[Activos][docs-assets]** en Stellar son una parte enorme de la arquitectura de la red. Si no está familiarizado con cómo funcionan los activos con "Classic" Stellar, la documentación para desarrolladores tiene toda la información que necesitará. O, si quieres ganar algunos escudos más mientras aprendes, el nivel 1 de [Stellar Quest Learn][sq-learn] es exactamente lo que quieres! Hay mucho conocimiento excelente sobre activos y pagos allí.
+* La búsqueda de hoy hace uso del**[SDK `soroban-auth`][rust-auth]** por primera vez en cualquier búsqueda. Le permite a usted y a su contrato autenticar usuarios de diversas maneras. Si está construyendo algo en Soroban, querrá familiarizarse con este SDK.
+* Soroban no sabe mucho sobre el estado de la red Stellar en el momento de la ejecución. Pero, sabe algunas cosas, y esas se le presentan como una estructura de datos`Ledger`. Hay cosas significativas para saber, ¡así que aquí está la relevante**[página de documentación][sdk-ledger]** todo sobre eso!
+
 ## Still Stuck?
 
-If you're hitting a brick wall, and you're not sure what your next move is,
-check out [this section](../../README.md#feeling-lost) in our main README. It's
-got a couple of suggestions for where you might go from here.
-
-[how-to-play]: ../1-hello-world/README.md#how-to-play
-[token-contract]: https://soroban.stellar.org/docs/built-in-contracts/token
-[token-interface]: https://soroban.stellar.org/docs/common-interfaces/token
-[built-in-interface]: https://soroban.stellar.org/docs/built-in-contracts/token#contract-interface
-[cap-46-6]: https://stellar.org/protocol/cap-46-06
-[docs-assets]: https://developers.stellar.org/docs/fundamentals-and-concepts/stellar-data-structures/assets
-[assets-faq]: https://soroban.stellar.org/docs/faq#can-soroban-contracts-interact-with-stellar-assets
-[lumens]: https://developers.stellar.org/docs/fundamentals-and-concepts/lumens
-[overcat]: https://github.com/overcat
-[stroop]: https://developers.stellar.org/docs/glossary#stroop
-[timelock]: https://soroban.stellar.org/docs/examples/timelock
-[single-offer]: https://soroban.stellar.org/docs/examples/single-offer-sale
-[liquidity-pool]: https://soroban.stellar.org/docs/examples/liquidity-pool
-[sq-learn]: https://quest.stellar.org/learn
-[rust-auth]: https://soroban.stellar.org/docs/SDKs/rust-auth
-[sdk-ledger]: https://docs.rs/soroban-sdk/latest/soroban_sdk/ledger/struct.Ledger.html
-[sorobanathon]: https://github.com/stellar/sorobanathon
+Si aún te encuentras atascado, revisa esta sección en nuestro archivo README principal
+([aquí](https://chat.openai.com/README.md#feeling-lost)). Tiene algunas sugerencias de dónde ir desde aquí.

@@ -1,81 +1,59 @@
-# Quest 5 - Custom Types <!-- omit in toc -->
+# Quest 5 - Tipos personalizados <!-- omit in toc -->
 
 ## TL;DR
 
-Ok, fine! I guess you *maybe* kinda sorta have what it takes to get started with
-just a short prompt. Fine! Be my guest! But don't forget: Knowledge abounds
-further down in the README!
+¡Vale! Supongo que *tal vez* puedas empezar con solo un corto estímulo. ¡De acuerdo! ¡Sé mi invitado! Pero no te olvides: ¡El conocimiento abunda más abajo en el README!
 
-**ALSO**: We're going to flip things around on you today! You've gotten pretty
-good at the deploy and invoke steps of the Soroban process (and, yes, you'll
-have to do those today, as well). But, how are your Rust chops?? That's right,
-today you're going to be *writing* some actual Rust in your contract!
+**ADEMÁS** : ¡Hoy vamos a cambiar las cosas! ¡Te has vuelto bastante bueno en los pasos de implementación e invocación del proceso de Soroban (y, sí, tendrás que hacerlo hoy también)! ¿Pero cómo están tus habilidades en Rust?? ¡Eso es correcto! ¡Hoy escribirás algo de Rust real en tu contrato!
 
-**For today's quest, you must create a set of custom types in your contract that
-conform to the specifications listed below. You must also deploy that contract,
-and then make the necessary invocations for each of the custom types. Finally,
-you must invoke the `verify` function of our verification contract
-`422d1c0091a0528e3630fb5301389da530c40be4ce2eb8fcadf426a3d53627d3` so we can
-double-check your custom type definitions.**
+**Para la quest de hoy, debes crear un conjunto de tipos personalizados en tu contrato que cumplan con las especificaciones listadas a continuación. También debes implementar ese contrato y luego realizar las invocaciones necesarias para cada uno de los tipos personalizados. Finalmente, debes invocar la función `verify` de nuestro contrato de verificación `422d1c0091a0528e3630fb5301389da530c40be4ce2eb8fcadf426a3d53627d3` para que podamos verificar tus definiciones de tipos personalizados.**
 
-## Table of Contents <!-- omit in toc -->
+## Tabla de contenido <!-- omit in toc -->
 
-- [TL;DR](#tldr)
-- [How to Play](#how-to-play)
-- [The Task at Hand](#the-task-at-hand)
-  - [Custom Types in Rust](#custom-types-in-rust)
-    - [Rust `enum`s](#rust-enums)
-    - [Rust `struct`s](#rust-structs)
-  - [Custom Types in Soroban](#custom-types-in-soroban)
-  - [Create Your Custom Types](#create-your-custom-types)
-    - [Rectangle](#rectangle)
-    - [Animal](#animal)
-    - [User](#user)
-    - [RGB](#rgb)
-    - [Color](#color)
-    - [Participant](#participant)
-    - [RoyalCard](#royalcard)
-  - [Invoke Your Contract](#invoke-your-contract)
-  - [Let Us Check Your Work](#let-us-check-your-work)
-- [Further Reading](#further-reading)
-- [Still Stuck?](#still-stuck)
+* [TL;DR](https://chat.openai.com/chat#tldr)
+* [Cómo jugar](https://chat.openai.com/chat#c%C3%B3mo-jugar)
+* [La tarea a mano](https://chat.openai.com/chat#la-tarea-a-mano)
+  * [Tipos personalizados en Rust](https://chat.openai.com/chat#tipos-personalizados-en-rust)
+    * [`enum`s de Rust](https://chat.openai.com/chat#enums-de-rust)
+    * [`struct`s de Rust](https://chat.openai.com/chat#structs-de-rust)
+  * [Tipos personalizados en Soroban](https://chat.openai.com/chat#tipos-personalizados-en-soroban)
+  * [Crea tus tipos personalizados](https://chat.openai.com/chat#crea-tus-tipos-personalizados)
+    * [Rectángulo](https://chat.openai.com/chat#rect%C3%A1ngulo)
+    * [Animal](https://chat.openai.com/chat#animal)
+    * [Usuario](https://chat.openai.com/chat#usuario)
+    * [RGB](https://chat.openai.com/chat#rgb)
+    * [Color](https://chat.openai.com/chat#color)
+    * [Participante](https://chat.openai.com/chat#participante)
+    * [RoyalCard](https://chat.openai.com/chat#royalcard)
+  * [Invoca tu contrato](https://chat.openai.com/chat#invoca-tu-contrato)
+  * [Deja que verifiquemos tu trabajo](https://chat.openai.com/chat#deja-que-verifiquemos-tu-trabajo)
+* [Lectura adicional](https://chat.openai.com/chat#lectura-adicional)
+* [Todavía atascado?](https://chat.openai.com/chat#todav%C3%ADa-atascado)
 
-## How to Play
+## Cómo jugar
 
-If you missed out on our previous quests, or you just need a refresher, we have
-some (pretty extensive) instructions for the *mechanics* of completing these
-quests (generating keypairs, checking your work, etc.).
+Si te perdiste de nuestras misiones anteriores o solo necesitas un repaso, tenemos instrucciones (bastante extensas) para las *mecánicas* de completar estas misiones (generar parejas de claves, revisar tu trabajo, etc.).
 
-All that information [can be found here][how-to-play] if you need to use those
-instructions again.
+Toda esa información [se puede encontrar aquí][how-to-play] si necesitas usar esas instrucciones nuevamente.
 
-## The Task at Hand
+## La tarea a mano
 
-This is a big moment! You feel prepared. You feel ready. Quite frankly, you
-*are* ready! You've got the gumption and the tenacity to tackle this quest!
+Este es un momento importante! Te sientes preparado. Te sientes listo. Francamente, *estás* listo! Tienes el valor y la tenacidad para abordar esta misión!
 
-But, again, please: **Read the code!!** There is important stuff that you need
-to know inside of there. (Plus, we worked really hard on it, and you should
-totally use it to the fullest extent!)
+Pero, de nuevo, por favor: **Lee el código!!** Hay cosas importantes que necesitas
+saber dentro de él. (Además, trabajamos muy duro en él, y deberías usarlo al
+máximo).
 
-*Bonus*: You've heard us say you should "read `lib.rs`" like a hundred times by
-now. But today there's a fancy new `types.rs` file you should take a gander at.
+*Bonificación* : Ya nos has escuchado decir que debes "leer `lib.rs`" como un centenar de veces. Pero hoy hay un nuevo y elegante archivo `types.rs` que deberías echar
+un vistazo.
 
-### Custom Types in Rust
+### Tipos Personalizados en Rust
 
-A custom type in the [Soroban Rust dialect][soroban-dialect] is declared using
-the `contracttype` attribute macro on either a `struct` or `enum` definition.
-But, before we dive into the Soroban-specific information, let's camp out with
-how this concept plays out in a standard Rust environment. Don't worry: this'll
-be quick.
+Un tipo personalizado en el dialecto Rust de Soroban se declara usando el macro de atributo `contracttype` en una definición de `struct` o `enum`. Pero, antes de sumergirnos en la información específica de Soroban, detengámonos en cómo este concepto se desarrolla en un entorno estándar de Rust. No te preocupes, esto será rápido.
 
-#### Rust `enum`s
+#### Enums de Rust
 
-In Rust, we can use an `enum` (short for `enumeration`) to define a type by
-listing (or "enumerating") all of its possible variants. You could think of a
-defined `enum` as a "menu" from which you choose one item. You won't necessarily
-choose the same thing every time, but you'll choose only one when it is time to
-make a selection. For example:
+En Rust, podemos usar una `enum` (abreviatura de `enumeración`) para definir un tipo al listar (o "enumerar") todas sus variantes posibles. Podrías pensar en una `enum` definida como un "menú" del que eliges un elemento. No necesariamente elegirás lo mismo cada vez, pero solo elegirás uno cuando sea el momento de hacer una selección. Por ejemplo:
 
 ```rust
 enum Lunch {
@@ -86,17 +64,11 @@ enum Lunch {
 }
 ```
 
-The *Rust Book* contains a [whole chapter on `enum`s][rust-enums], and it has a
-lot more very valuable information that you can learn. Be sure to check it out!
+El *Libro de Rust* contiene [todo un capítulo sobre los `enum`][rust-enums], y tiene mucha más información valiosa que puedes aprender. ¡Asegúrate de revisarlo!
 
 #### Rust `struct`s
 
-In Rust, a `struct` allows us to gather together and name multiple values that
-are related in some way. Such a `struct` will be a custom data type that
-represents a meaningful group of those values. Rather than a menu from which you
-choose, a `struct` is more like that "template" document you save so you can
-just make a copy and fill out a few things when the time comes to start on your
-homework. For example:
+En Rust, una `struct` nos permite reunir y nombrar múltiples valores que están relacionados de alguna manera. Tal `struct` será un tipo de datos personalizado que representa un grupo significativo de esos valores. En lugar de un menú del cual eliges, una `struct` es más como ese documento de "plantilla" que guardas para que puedas hacer una copia y llenar algunas cosas cuando llegue el momento de comenzar tus tareas. Por ejemplo:
 
 ```rust
 struct Homework {
@@ -108,8 +80,7 @@ struct Homework {
 }
 ```
 
-We could then create a new *instance* of a `Homework` assignment by doing
-something like this:
+Entonces podríamos crear una nueva *instancia* de una tarea de `Homework` haciendo algo como esto:
 
 ```rust
 let homework1 = Homework {
@@ -121,49 +92,35 @@ let homework1 = Homework {
 };
 ```
 
-The *Rust Book* also has a [whole chapter on `struct`s][rust-struct], and it has
-even more information! Check this one out, too!
+El libro de *Rust* también tiene un [capítulo completo sobre `struct`s][rust-struct], y ¡tiene aún más información! ¡Echa un vistazo a este también!
 
-### Custom Types in Soroban
+### Tipos Personalizados en Soroban
 
-If you choose to click only one link in this entire README, please make it this
-one: The **[Custom Types][learn-ct]** article in the Soroban documentation is
-just truly *very* good. The custom types you can create on Soroban are made up
-of `struct` types and `enum` types, though there are a few different conventions
-used to define those types. The broad categories of custom types you can create
-are:
+Si eliges hacer clic en solo un enlace en todo este README, por favor hazlo en este: El artículo de **[Tipos Personalizados][learn-ct]** en la documentación de Soroban es realmente muy bueno. Los tipos personalizados que puedes crear en Soroban están compuestos por tipos `struct` y tipos `enum`, aunque hay algunas convenciones diferentes para definir esos tipos. Las grandes categorías de tipos personalizados que puedes crear son:
 
-- [Struct with Named Fields](https://soroban.stellar.org/docs/learn/custom-types#structs-with-named-fields)
-- [Struct with Unnamed Fields](https://soroban.stellar.org/docs/learn/custom-types#structs-with-unamed-fields)
-- [Enum with Unit and Tuple Variants](https://soroban.stellar.org/docs/learn/custom-types#enum-unit-and-tuple-variants)
-- [Enum with Integer Variants](https://soroban.stellar.org/docs/learn/custom-types#enum-integer-variants)
+* [Struct con Campos con Nombre](https://soroban.stellar.org/docs/learn/custom-types#structs-with-named-fields)
+* [Struct con Campos sin Nombre](https://soroban.stellar.org/docs/learn/custom-types#structs-with-unamed-fields)
+* [Enum con Variantes de Unidad y Tupla](https://soroban.stellar.org/docs/learn/custom-types#enum-unit-and-tuple-variants)
+* [Enum con Variantes Enteras](https://soroban.stellar.org/docs/learn/custom-types#enum-integer-variants)
 
-It's also important to understand that enums are currently supported as contract
-types in Soroban only when all variants have an explicit integer literal, **or**
-when all variants are unit or single field variants.
+También es importante entender que los enums solo son compatibles como tipos de contrato en Soroban cuando todas las variantes tienen un literal entero explícito, o cuando todas las variantes son variantes unitarias o de un solo campo.
 
-In the **[Custom Types][learn-ct]** article you'll even learn quite a bit about
-how Soroban will store your custom types on the Ledger, XDR conversion, JSON
-representation, and more!
+En el artículo **[Tipos personalizados][learn-ct]** , aprenderás mucho sobre
 
-An additional (and very useful) resource in the Soroban documentation can be
-found here: [Error Enums][error-enums] describes how you might use an `enum` to
-meaningfully convey error information. That might seem vaguely familiar, if you
-remember having to frantically figure out what error you were receiving (and
-why) during [Quest 2](../2-auth-store/README.md).
+cómo Soroban almacenará tus tipos personalizados en el Ledger, la conversión XDR, la representación JSON y más.
 
-### Create Your Custom Types
+Encontrarás un recurso adicional (y muy útil) en la documentación de Soroban aquí: [Enumeraciones de errores][error-enums] describe cómo podrías usar una `enum` para transmitir de manera significativa la información de error. Eso podría parecer vagamente familiar, si recuerdas haber tenido que resolver frenéticamente qué error estabas recibiendo (y por qué) durante [La Misión 2](https://chat.openai.com/2-auth-store/README.md).
 
-Ok, that was some **great** educational content, but we're back on track! For
-this quest, you must create and then invoke the following custom types in your
-contract:
+### Crea tus tipos personalizados
 
-#### Rectangle
+Ok, eso fue un gran contenido educativo, ¡pero volvemos al camino! Para
+esta búsqueda, debes crear y luego invocar los siguientes tipos personalizados en tu contrato:
 
-The `Rectangle` type must be a `struct`, with two fields: `width` and `height`
-which both must be a `u32` value.
+#### Rectángulo
 
-Invoke the `c_rect` function to create a `Rectangle` using something like:
+El tipo `Rectángulo` debe ser un `struct`, con dos campos: `width` y `height` que ambos deben ser un valor `u32`.
+
+Invoque la función `c_rect` para crear un `Rectángulo` usando algo como:
 
 ```bash
 soroban invoke \
@@ -174,10 +131,9 @@ soroban invoke \
 
 #### Animal
 
-The `Animal` type must be an `enum`, with at least two variations: `Cat` and
-`Dog`.
+El tipo `Animal` debe ser un `enum`, con al menos dos variaciones: `Cat` y `Dog`.
 
-Invoke the `c_animal` function to create an `Animal` using something like:
+Invoca la función `c_animal` para crear un `Animal` usando algo como:
 
 ```bash
 soroban invoke \
@@ -188,10 +144,9 @@ soroban invoke \
 
 #### User
 
-The `User` type must be a `struct` with `name`, `age`, and `pet` fields,
-corresponding to `Bytes`, `u32`, and `Animal` values, respectively.
+El tipo `User` debe ser un `struct` con campos `name`, `age` y `pet`, correspondientes a valores de `Bytes`, `u32` y `Animal`, respectivamente.
 
-Invoke the `c_user` function to create a `User` using something like:
+Invoque la función `c_user` para crear un `User` usando algo como:
 
 ```bash
 soroban invoke \
@@ -200,15 +155,13 @@ soroban invoke \
     --arg '{"object":{"map":[{"key":{"symbol":"name"},"val":{"object":{"bytes":"<a-hex-encoded-string>"}}},{"key":{"symbol":"age"},"val":{"u32":<a-u32-integer>}},{"key":{"symbol":"pet"},"val":<an-animal-object>}]}}'
 ```
 
-*Note*: You will need to use some JSON for the `Animal` field of the user. You
-could even copy the argument you used when invoking `c_animal`.
+*Nota*: Necesitarás usar algo de JSON para el campo "Animal" del usuario. Incluso podrías copiar el argumento que usaste al invocar la función "c_animal".
 
 #### RGB
 
-The `RGB` type must be a tuple `struct` type made with a tuple of 3 `u32`
-values.
+El tipo `RGB` debe ser un tipo de estructura de `tupla` formada por una `tupla` de `3`valores`u32`.
 
-Invoke the `c_rgb` function to create a `RGB` value using something like:
+Invoque la función `c_rgb` para crear un valor `RGB` usando algo así como:
 
 ```bash
 soroban invoke \
@@ -219,12 +172,9 @@ soroban invoke \
 
 #### Color
 
-The `Color` type will combine the `RGB` custom type nested within a tuple `enum`
-type. Construct your `RGB` struct type as described bove, Then, your `Color`
-enum type must be defined as a variant with a name of "RGB" and an instance of
-your `RGB` type.
+El tipo `Color` combinará el tipo personalizado `RGB` anidado dentro de un tipo de enumeración de tuplas. Construye tu tipo de estructura `RGB` como se describe arriba, luego tu tipo de enumeración `Color` debe definirse como una variante con un nombre de "RGB" e una instancia de tu tipo `RGB`.
 
-Invoke the `c_color` function to create a `Color` using something like:
+Invocar la función `c_color` para crear un `Color` usando algo como:
 
 ```bash
 soroban invoke \
@@ -235,14 +185,12 @@ soroban invoke \
 
 #### Participant
 
-The `Participant` type must be an `enum` with single-value tuple variants as
-follows:
+El tipo `Participant` debe ser un `enum` con variantes de tuplas de un solo valor como sigue:
 
-- An "Account" variant with an `AccountId` type
-- A "Contract" variant with a `BytesN<32>` type
+* Una variante "Cuenta" con un tipo`AccountId`
+* Una variante "Contrato" con un tipo`BytesN<32>`
 
-Invoke the `c_part` function to create an account `Participant` using something
-like:
+Invoca la función `c_part` para crear un participante de cuenta usando algo como:
 
 ```bash
 soroban invoke \
@@ -251,8 +199,7 @@ soroban invoke \
     --arg '{"object":{"vec":[{"symbol":"Account"},{"object":{"accountId":{"publicKeyTypeEd25519":"<hex-encoded-account-id>"}}}]}}'
 ```
 
-Also invoke the `c_part` function to create a contract `Participant` using
-something like:
+También invoca la función `c_part` para crear un participante de contrato usando algo como:
 
 ```bash
 soroban invoke \
@@ -263,14 +210,13 @@ soroban invoke \
 
 #### RoyalCard
 
-The `RoyalCard` type must be an `enum` containing three `u32` integer variations
-as follows:
+El tipo `RoyalCard` debe ser un `enum` que contenga tres variaciones de enteros `u32` como sigue:
 
-- A "Jack" variant, with a value of 11
-- A "Queen" variant, with a value of 12
-- A "King" variant, with a value of 13
+* Una variante "Jack", con un valor de 11
+* Una variante "Queen", con un valor de 12
+* Una variante "King", con un valor de 13
 
-Invoke the `c_card` function using something like:
+Invocar la función `c_card` usando algo como:
 
 ```bash
 soroban invoke \
@@ -279,63 +225,54 @@ soroban invoke \
     --arg '{"u32":<a-u32-integer>}'
 ```
 
-### Invoke Your Contract
+### Invocar tu Contrato
 
-That was a lot of work, wasn't it! You should be really proud of yourself. I
-know I am. Now that you have all your custom types written and deployed (oh
-yeah, don't forget to deploy your contract!), you need to *invoke* each of the
-functions listed in `src/lib.rs` and pass a valid `--arg` for your custom type.
-There's some helpful hints on how to invoke these throughout this README.
+¡Eso fue mucho trabajo, ¿verdad? Debes estar realmente orgulloso de ti mismo. Yo lo estoy. Ahora que tienes todos tus tipos personalizados escritos y desplegados (¡oh sí, no olvides desplegar tu contrato!), debes *invocar* cada una de las funciones listadas en `src/lib.rs` y pasar un `--arg` válido para tu tipo personalizado. Hay algunas sugerencias útiles sobre cómo invocar estos a lo largo de este README.
 
-In case you lost track, you must invoke the following functions providing an
-argument of the custom type you created:
+Por si perdiste la cuenta, debes invocar las siguientes funciones proporcionando un argumento del tipo personalizado que creaste:
 
-| Function | Argument Type |
-| --- | --- |
-| c_rect | [Rectangle](#rectangle) |
-| c_animal | [Animal](#animal) |
-| c_user | [User](#user) |
-| c_rgb | [RGB](#rgb) |
-| c_color | [Color](#color) |
-| c_part | [Participant](#participant)* |
-| c_card | [RoyalCard](#royalcard) |
 
-> \* Don't forget the `Participant` type must be invoked twice, once as an
-> `Account`, and once as a `Contract`.
+| Función | Tipo de Argumento                                         |
+| ---------- | ----------------------------------------------------------- |
+| c_rect   | [Rectángulo](https://chat.openai.com/chat#rectangle)     |
+| c_animal | [Animal](https://chat.openai.com/chat#animal)             |
+| c_user   | [Usuario](https://chat.openai.com/chat#user)              |
+| c_rgb    | [RGB](https://chat.openai.com/chat#rgb)                   |
+| c_color  | [Color](https://chat.openai.com/chat#color)               |
+| c_part   | [Participante](https://chat.openai.com/chat#participant)* |
+| c_card   | [RoyalCard](https://chat.openai.com/chat#royalcard)       |
 
-### Let Us Check Your Work
+> * No olvides que el tipo `Participante` debe ser invocado dos veces, una vez como una `Cuenta`, y una vez como un `Contrato`.
+>
 
-Well done, you've customized all the types, you've invoked all the things, and
-you're ready to claim your prize! Before we get on with it, just *one* more
-thing: **You need to invoke our verification contract.**
+### Permítenos Revisar tu Trabajo
 
-Using your Quest Keypair, you must invoke the `verify` function on the contract
-with the ID `40d12b03a08f5dde4e0068aa752fa65eddf905e82a18f522efe350e0cd268b8a`,
-supplying your own contract ID as an argument. We'll double-check all your hard
-work, and make sure you've implemented the required custom types with the
-necessary fields, variants, values, etc.
+Bien hecho, has personalizado todos los tipos, has invocado todas las cosas, y
+estás listo para reclamar tu premio. Antes de continuar, solo *una* cosa más:
+**Debes invocar nuestro contrato de verificación** .
 
-**Then**, you are free to use `sq check 5` to (try and) claim your prize!
+Usando tu par de claves Quest, debes invocar la función `verificar` en el contrato con el ID `40d12b03a08f5dde4e0068aa752fa65eddf905e82a18f522efe350e0cd268b8a`,
+suministrando tu propio ID de contrato como argumento. Revisaremos todo tu arduo trabajo, y nos aseguraremos de que hayas implementado los tipos personalizados requeridos con los campos, variantes, valores, etc. necesarios.
 
-## Further Reading
+**Entonces** , eres libre de usar `sq check 5` para (intentar) reclamar tu premio!
 
-- Again, just trust me and **read this**: The [Custom Types][learn-ct] article
-  in the Learn section of the Soroban docs could *not* be more useful!
-- You can look in the [SDK Docs][sdk-contracttype] to learn more about the
-  `contracttype` attribute macro.
-- There is an entire [Custom Types example contract][example-ct] you can look at
-  and read through in the Soroban docs. It's great for inspiration, or to see
-  how all these pieces can fit together.
-- Read more about the [Contract Dialect][soroban-dialect] of Rust used in
-  Soroban in the documentation.
-- I know we mentioned it a few times last week, but seriously! Trust us when we
-  tell you [Smephite's Guide][smephite-guide] is incredibly helpful!
+### Lectura Adicional
 
-## Still Stuck?
+* De nuevo, solo confía en mí y**lee esto** : el artículo [Tipos Personalizados][learn-ct]
+  en la sección Aprender de la documentación de Soroban es*imprescindible* .
+* Puedes buscar en las [Documentación del SDK][sdk-contracttype] para obtener más información sobre la
+  macro de atributo`contracttype`.
+* Hay un [contrato de ejemplo de Tipos Personalizados][example-ct] completo que puedes ver y leer
+  en la documentación de Soroban. Es excelente para inspiración o ver
+  cómo todas estas piezas pueden encajar juntas.
+* Lee más sobre el [Dialecto de Contrato][soroban-dialect] de Rust utilizado en
+  Soroban en la documentación.
+* ¡Lo mencionamos varias veces la semana pasada, pero en serio! Confía en nosotros cuando te decimos
+  que la [Guía de Smephite][smephite-guide] es increíblemente útil!
 
-If you're hitting a brick wall, and you're not sure what your next move is,
-check out [this section](../../README.md#feeling-lost) in our main README. It's
-got a couple of suggestions for where you might go from here.
+## ¿Todavía atascado?
+
+Si te encuentras en una pared, y no estás seguro de cuál es tu próximo movimiento, consulta [esta sección](https://chat.openai.com/README.md#feeling-lost) en nuestro README principal. Tiene algunas sugerencias sobre adónde ir a partir de aquí
 
 [how-to-play]: ../1-hello-world/README.md#how-to-play
 [sdk-contracttype]: https://docs.rs/soroban-sdk/latest/soroban_sdk/attr.contracttype.html
