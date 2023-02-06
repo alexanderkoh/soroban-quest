@@ -1,93 +1,93 @@
-# Chapter 4
+# Capítulo 4
 
-Blossom Bernice Breydenblach and Roscoe followed the next hallway for some time
-before it opened into a spacious, circular room. In the center was a large
-saucer-like structure that gave off a slight hum. "Do you hear that?" asked Bee,
-stopping to stare at the craft.
+Blossom Bernice Breydenblach y Roscoe siguieron el siguiente pasillo durante algún tiempo.
+antes de que se abriera a una espaciosa habitación circular. En el centro había un gran
+estructura en forma de platillo que emitía un ligero zumbido. "¿Escuchas eso?" preguntó abeja,
+deteniéndose para mirar la nave.
 
-Roscoe shuddered. "More like feel it. The vibrations feel like they're coming
-from inside me," he said, putting his hand to his chest.
+Roscoe se estremeció. "Más como sentirlo. Las vibraciones se sienten como si estuvieran viniendo
+dentro de mí", dijo, llevándose la mano al pecho.
 
-Bee nodded. "Mmm, yes, quite unnerving. I'd love to analyze this ship more on
-the way back."
+Abeja asintió. "Mmm, sí, bastante desconcertante. Me encantaría analizar esta nave más en
+el camino de vuelta."
 
-"Yeah, that's a no for me" Roscoe said. "After we collect the Golden Soroban,
-I'm heading straight to the bar."
+"Sí, eso es un no para mí", dijo Roscoe. "Después de que recolectemos el Golden Soroban,
+Me dirijo directamente al bar".
 
-"Where's your sense of adventure?" Bee chastised.
+"¿Dónde está tu sentido de la aventura?" Bee reprendió.
 
-"It's here. Right now. Saving your life around every corner."
+"Está aquí. Ahora mismo. Salvándote la vida en cada esquina".
 
-Bee rolled her eyes. "Oh, alright. Come on, I see a doorway on the other side of
-the room. And it looks like there's someone there."
+Bee puso los ojos en blanco. "Oh, está bien. Vamos, veo una puerta al otro lado de la
+el cuarto. Y parece que hay alguien allí".
 
-There was, indeed, a small doorway directly across from them with a slight
-figure in front of it. Bee and Roscoe circumvented the alien spacecraft and
-approached the man. He was old, with white, wispy hair and wrinkles cutting
-through his tan skin. He sat cross-legged but seemed to hover in midair. Bee
-walked up to the man. "Hello, sir," she said. "May we please get by you?"
+Había, de hecho, una pequeña puerta justo enfrente de ellos con una ligera
+figura frente a ella. Bee y Roscoe sortearon la nave extraterrestre y
+se acercó al hombre. Era viejo, con cabello blanco y ralo y arrugas cortantes.
+a través de su piel bronceada. Se sentó con las piernas cruzadas, pero parecía flotar en el aire. Abeja
+caminó hacia el hombre. "Hola, señor", dijo ella. "¿Podemos pasar por ti?"
 
-The old man's eyes lit up as he looked at Bee. "Oh, wonderful! I have
-listeners!" He cleared his throat. "Welcome, friends! To claim safe passage
-onward, you must first hear my story in its entirety."
+Los ojos del anciano se iluminaron cuando miró a Bee. "¡Oh, maravilloso! Tengo
+oyentes!" Se aclaró la garganta. "¡Bienvenidos, amigos! Para reclamar salvoconducto
+adelante, primero debes escuchar mi historia en su totalidad".
 
-Bee glanced at Roscoe. "Okay," she said. "We'll hear your story."
+Bee miró a Roscoe. "Está bien", dijo ella. "Escucharemos tu historia".
 
-The old man ahem'd again. "Several centuries ago, long before me, you, our
-grandparents, or our great, great, great grandparents were alive, the
-otherworlders came to Earth," the man began. Then he paused. "Oh, gracious, how
-rude of me. I forgot to introduce myself. My name is Ozias O'Reilly, the Keeper
-of Lore. It is indeed a most pleasurable meeting. Seeing you here has provided
-me with immeasurable joy."
+El anciano volvió a hacer ejem. "Hace varios siglos, mucho antes que yo, tú, nuestro
+abuelos, o nuestros tatara, tatara, tatarabuelos estaban vivos, el
+de otros mundos vinieron a la Tierra ", comenzó el hombre. Luego hizo una pausa. "Oh, Dios mío, cómo
+grosero de mi parte Olvidé presentarme. Mi nombre es Ozias O'Reilly, el Guardián
+de Lore. De hecho, es una reunión sumamente placentera. Verte aquí ha proporcionado
+mí con una alegría inconmensurable".
 
-Bee frowned. "I'm excited to hear your story, sir," she said.
+Abeja frunció el ceño. "Estoy emocionada de escuchar su historia, señor", dijo.
 
-The man chuckled. "Oh, just call me Ozias, please."
+El hombre se rió. "Oh, solo llámame Ozias, por favor".
 
-"Alright, Ozias. Well, it's just that, we're in a bit of a hurry, and how long
-is this story, exactly?" Bee glanced around, just now noticing a pile of bones
-further along the wall. She nudged Roscoe and gestured toward them. His eyes
-bulged.
+"Está bien, Ozias. Bueno, es solo que, estamos un poco apurados, y ¿cuánto tiempo
+es esta historia, exactamente?" Bee miró a su alrededor, justo ahora notando un montón de huesos
+más a lo largo de la pared. Le dio un codazo a Roscoe e hizo un gesto hacia ellos. Sus ojos
+abultado
 
-Ozias laughed again. "Actually, I've never finished the story now that I think
-about it!"
+Ozías se rió de nuevo. "En realidad, nunca he terminado la historia ahora que pienso
+al respecto!"
 
-Roscoe and Bee exchanged another glance. "Ooookay, well, maybe we'll just hear
-the story on our way back," Roscoe said, grabbing Bee's arm and moving around
-the man toward the doorway. In a flash, the man bounded up and performed a
-flawless flying heel kick to Roscoe's face. "OUCH," Roscoe cried, falling onto
-his back.
+Roscoe y Bee intercambiaron otra mirada. "Ooookay, bueno, tal vez solo escuchemos
+la historia en nuestro camino de regreso", dijo Roscoe, agarrando el brazo de Bee y moviéndose
+el hombre hacia la puerta. En un instante, el hombre saltó y realizó un
+impecable patada de talón volador a la cara de Roscoe. "OUCH", gritó Roscoe, cayendo sobre
+su espalda.
 
-Ozias glared at them. "You will hear my story," he said. "And if you fall
-asleep, I will be offended, and you will die."
+Ozias los fulminó con la mirada. "Escucharán mi historia", dijo. "Y si te caes
+dormido, me ofenderé y morirás".
 
-Well, that explained the bones.
+Bueno, eso explicaba los huesos.
 
-Bee helped Roscoe up from the ground. "Ozias, question for you. Have you
-yourself ever been able to listen to a story?"
+Bee ayudó a Roscoe a levantarse del suelo. Ozias, una pregunta para ti.
+¿Has sido capaz alguna vez de escuchar una historia?
 
-Ozias pondered. "Listen to a story? Nobody has ever asked me that before."
+Ozías reflexionó. "¿Escuchar una historia? Nadie me había preguntado eso antes".
 
-"Oh, well! You're in for a treat!" Bee said, swinging her backpack from her back
-and digging inside. She pulled out her Walkman and plopped a pair of headphones
-onto Ozias's head. "Don't worry, this story is quite brief," she told him. "When
-you're finished, we'll gladly listen to yours." She pressed play on the device.
-Ozias's eyes lit up, and he snatched the Walkman.
+"¡Oh, bueno! ¡Te espera un regalo!" dijo Bee, sacando su mochila de su espalda.
+y cavando adentro. Sacó su Walkman y colocó un par de auriculares
+sobre la cabeza de Ozias. "No te preocupes, esta historia es bastante breve", le dijo. "Cuando
+has terminado, con gusto escucharemos el tuyo." Ella presionó reproducir en el dispositivo.
+Los ojos de Ozias se iluminaron y agarró el Walkman.
 
-Roscoe stepped up beside Bee. "What are you doing?" he muttered.
+Roscoe se puso al lado de Bee. "¿Qué estás haciendo?" él murmuró.
 
-Bee grinned. "It's my meditation disk," she whispered. "He'll be asleep in ten
-minutes."
+Abeja sonrió. "Es mi disco de meditación", susurró. "Estará dormido en diez
+minutos."
 
-"Incredible," Roscoe marveled. They sat down and waited. True enough, Ozias was
-soon drifting off and after just a few minutes, started to snore lightly.
+"Increíble", se maravilló Roscoe. Se sentaron y esperaron. Es cierto que Ozias fue
+pronto se quedó dormido y después de unos pocos minutos, comenzó a roncar ligeramente.
 
-Bee and Roscoe tip-toed around him, Bee turning back to look longingly at her
+Bee y Roscoe caminaron de puntillas a su alrededor, Bee se volvió para mirarla con anhelo.
 Walkman.
 
-"Bee," Roscoe said, noticing her look. "I will buy you fifty Walkmans when we
-get out of here. Heck, I'll buy you a golden Walkman. Just don't let me get
-kicked in the face again."
+"Bee", dijo Roscoe, notando su mirada. Te compraré cincuenta walkmans cuando terminemos.
+sal de aquí. Diablos, te compraré un Walkman dorado. Solo no me dejes conseguir
+otra vez pateado en la cara".
 
-Bee noticed Roscoe's blackening eye and puffy lip. "Alright, let's go," she
-said, and they rushed on. The Golden Soroban was close, Bee could feel it.
+Bee notó el ojo ennegrecido y el labio hinchado de Roscoe. "Está bien, vamos", ella
+dijo, y se apresuraron. El Golden Soroban estaba cerca, Bee podía sentirlo.

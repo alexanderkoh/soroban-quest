@@ -1,120 +1,120 @@
-# Chapter 6
+# Capítulo 6
 
-The dark lake twinkled as Blossom Bernice Breydenblach and Roscoe approached the
-bank. The water was calm, rippling lightly as it lapped onto the shore. Bee
-crouched down and ran sand through her fingers, gazing at the gleaming Golden
-Soroban perched in the distance.
+El lago oscuro titilaba cuando Blossom Bernice Breydenblach y Roscoe se acercaron a la
+banco. El agua estaba en calma, ondulando ligeramente mientras lamía la orilla. Abeja
+se agachó y se pasó arena entre los dedos, mirando el reluciente Golden
+Soroban posado en la distancia.
 
-"What do you suppose we do?" Roscoe asked, picking up a flat stone and skipping
-it across the water's surface. Three skips. Not bad.
+"¿Qué se supone que hacemos?" preguntó Roscoe, recogiendo una piedra plana y saltando.
+sobre la superficie del agua. Tres saltos. Nada mal.
 
-Bee sighed. "I'm not sure. I need to think for a minute," she said.
+Abeja suspiró. "No estoy segura. Necesito pensar por un minuto", dijo.
 
-Roscoe nodded, that seemed perfectly reasonable. He walked around, collecting a
-handful of smooth stones, and continued to practice his throw. He got up to six
-skips, his personal best, when he noticed a large swell moving toward them.
-"Uhh, Bee?" he said, backing away. "I think I disturbed something in the water."
+Roscoe asintió, eso parecía perfectamente razonable. Caminó alrededor, recogiendo un
+puñado de piedras lisas, y continuó practicando su lanzamiento. Se levantó hasta las seis
+salta, su mejor marca personal, cuando notó un gran oleaje moviéndose hacia ellos.
+"¿Eh, Bee?" dijo, retrocediendo. "Creo que moví algo en el agua".
 
-Bee saw the wave and scrambled up, clutching Roscoe's arm. "Maybe whatever it is
-can help us," she said.
+Bee vio la ola y trepó, agarrando el brazo de Roscoe. "Tal vez sea lo que sea
+nos puede ayudar", dijo.
 
-"Ever the optimist," Roscoe answered as the swell reached the shore, and a large
-mass began to rise out of the water. It was a deep, rich blue and had scales
-that sparkled as water poured down its back and into the pool. Its body was
-split by a jagged dorsal fin that cascaded from its head and disappeared under
-the surface of the lake. The creature emerged slowly, revealing two luminous,
-bronze eyes.
+"Siempre el optimista", respondió Roscoe cuando el oleaje llegó a la orilla, y un gran
+masa comenzó a elevarse fuera del agua. Era de un azul profundo y rico y tenía escamas.
+que brillaba mientras el agua se derramaba por su espalda y en la piscina. Su cuerpo fue
+dividida por una aleta dorsal dentada que caía en cascada desde su cabeza y desaparecía bajo
+la superficie del lago. La criatura emergió lentamente, revelando dos luminosos,
+ojos de bronce.
 
-Bee and Roscoe stood agape.
+Bee y Roscoe se quedaron boquiabiertos.
 
-Roscoe found his voice first. "Umm, hello?" he stammered.
+Roscoe encontró su voz primero. "Umm, ¿hola?" tartamudeó.
 
-The creature slowly lifted its side fin and flapped it about in a waving motion.
+La criatura levantó lentamente su aleta lateral y la agitó en un movimiento ondulante.
 
-Bolstered by this gesture, Bee stepped forward. "Oh, Great and Powerful Fish!"
-she began with a bow. "I am Blossom Bernice Breydenblach, and this is my
-assistant, Roscoe. We seek your wise guidance!"
+Alentado por este gesto, Bee dio un paso adelante. "¡Oh, gran y poderoso pez!"
+ella comenzó con una reverencia. "Soy Blossom Bernice Breydenblach, y esta es mi
+asistente, Roscoe. ¡Buscamos su sabia guía!"
 
-"Assistant?" Roscoe muttered. "At least call me your sidekick."
+"¿Asistente?" Roscoe murmuró. "Al menos llámame tu compinche".
 
-Bee turned and glared at him. "Now is not the time," she said, then faced the
-creature again. "My *friend* and I are looking for safe passage to the island.
-Can you help us?"
+Bee se giró y lo miró fijamente. "Ahora no es el momento", dijo, luego se enfrentó a la
+criatura de nuevo. "Mi *amigo* y yo estamos buscando un pasaje seguro a la isla.
+¿Puedes ayudarnos?"
 
-Water continued to drip from the fish's scales, plopping into the pool. The
-beast raised its head until its mouth was visible above the lake. "Well met,
-humans," the fish said, its voice low and ethereal. "I am the Luck Fish. You may
-ride on my back to the island. And if you are lucky, you won't slip and die."
+El agua siguió goteando de las escamas de los peces, cayendo en la piscina. El
+bestia levantó la cabeza hasta que su boca se hizo visible sobre el lago. "Bien atendidas,
+humanos", dijo el pez, su voz baja y etérea. "Soy el Pez de la Suerte. Puedes
+paseo en mi espalda a la isla. Y si tienes suerte, no te resbalarás y morirás".
 
-"Fantastic!" Bee said and marched toward the fish.
+"¡Fantástico!" Bee dijo y marchó hacia el pez.
 
-Roscoe hung back, twirling his hair around his finger. "This pretty much goes
-against all my life's principles," he said.
+Roscoe se quedó atrás, girando su cabello alrededor de su dedo. "Esto va más o menos
+contra todos los principios de mi vida", dijo.
 
-"Oh, don't be such a baby Roscoe!" Bee admonished, glancing back at the pile of
-Zebulon behind them. "We have to go before the 'Zebulump' wakes up. Just grab
-the fin and hold on tight."
+"¡Oh, no seas tan bebé Roscoe!" Bee amonestó, mirando hacia atrás a la pila de
+Zabulón detrás de ellos. "Tenemos que irnos antes de que el 'Zebulump' se despierte. Solo toma
+la aleta y agárrate fuerte".
 
-Roscoe groaned and allowed Bee to lead him onto the fish's back. It was
-slippery, especially because he was missing a shoe. The Luck Fish pulled away
-from the shore and began to glide across the lake.
+Roscoe gimió y permitió que Bee lo guiara sobre la espalda del pez. Fue
+resbaladizo, sobre todo porque le faltaba un zapato. El Pez de la Suerte se alejó
+de la orilla y comenzó a deslizarse por el lago.
 
-A few uncomfortable minutes later, they reached the island. Bee and Roscoe
-hopped off of the fish's back and onto the sand. Bee gave the beast a few pats.
-"Why did you help us, Luck Fish?"
+Unos incómodos minutos después, llegaron a la isla. abeja y roscoe
+saltó de la espalda del pez y cayó en la arena. Bee le dio a la bestia unas palmaditas.
+"¿Por qué nos ayudaste, Luck Fish?"
 
-The fish was silent for a moment before speaking. "It must be your lucky day,"
-it said. "But be careful when your luck runs out."
+El pez guardó silencio por un momento antes de hablar. "Debe ser tu día de suerte",
+decía. "Pero ten cuidado cuando se te acabe la suerte".
 
-"That's ominous," Roscoe murmured as the Luck Fish dipped back into the water
-and swam away. "Wait a second, how are we supposed to get back?"
+"Eso es siniestro", murmuró Roscoe mientras el Luck Fish volvía a sumergirse en el agua.
+y se alejó nadando. "Espera un segundo, ¿cómo se supone que vamos a volver?"
 
-Bee was already advancing toward the center of the island toward the Golden
-Soroban. "We'll worry about that later," she called back. Roscoe rushed after
-her.
+Bee ya avanzaba hacia el centro de la isla hacia el Golden
+Sorobán. "Nos preocuparemos de eso más tarde", respondió ella. Roscoe corrió detrás
+su.
 
-"Wait!" he cried. "Are you sure you know what you're doing? Do you actually know
-what will happen when you claim the Golden Soroban?"
+"¡Esperar!" gritó. "¿Estás seguro de que sabes lo que estás haciendo? ¿Realmente sabes
+¿Qué pasará cuando reclames el Golden Soroban?"
 
-Bee gaped at him. "Roscoe, if we don't take it now, someone else will. And they
-might not have good intentions. It is best in our hands, no matter what
-happens."
+Bee lo miró boquiabierta. "Roscoe, si no lo tomamos ahora, alguien más lo hará. Y ellos
+puede que no tenga buenas intenciones. Es mejor en nuestras manos, pase lo que pase
+sucede".
 
-"Oh, alright," Roscoe conceded. "I just don't want anything to happen to you.
-You're my best friend."
+"Oh, está bien", concedió Roscoe. "Simplemente no quiero que te pase nada.
+Tú eres mi mejor amigo."
 
-Bee smiled at him. "You're my best friend too, Roscoe. We'll be okay, I
-promise."
+Bee le sonrió. "Tú también eres mi mejor amigo, Roscoe. Estaremos bien, creo".
+promesa."
 
-Roscoe nodded, and Bee stepped forward. She reached out both hands toward the
-device, gold reflecting in her hazel eyes. She grinned and glanced back at
-Roscoe before finally placing her hands on the Golden Soroban.
+Roscoe asintió y Bee dio un paso adelante. Extendió ambas manos hacia el
+dispositivo, oro reflejado en sus ojos color avellana. Ella sonrió y miró hacia atrás.
+Roscoe antes de finalmente colocar sus manos sobre el Golden Soroban.
 
-Time stood still for a moment, and Bee let out a relieved breath. "See, nothing
-to worry–"
+El tiempo se detuvo por un momento y Bee dejó escapar un suspiro de alivio. "No ver nada
+preocuparse-"
 
-Suddenly, a loud WHOOSH reverberated through the room. "What in the–," Roscoe
-said, glancing frantically about the cave.
+De repente, un fuerte WHOOSH reverberó en la habitación. "¿Qué diablos-," Roscoe
+dijo, mirando frenéticamente alrededor de la cueva.
 
-"Roscoe!" Bee cried, and Roscoe turned just in time to watch Bee, holding tight
-to the Golden Soroban, disappear with a pop.
+"¡Roscoe!" Gritó Bee, y Roscoe se giró justo a tiempo para mirar a Bee, agarrándola con fuerza.
+al Golden Soroban, desaparece con un pop.
 
-Roscoe blinked. "Bee?" he said, looking around the room. She was nowhere in
-sight.
+Roscoe parpadeó. "¿Abeja?" dijo, mirando alrededor de la habitación. ella no estaba en ninguna parte
+vista.
 
-Blossom Bernice Breydenblach and the Golden Soroban were gone.
+Blossom Bernice Breydenblach y el Golden Soroban se habían ido.
 
-Roscoe stood stunned. "I did not expect that," he murmured to himself. Bee was
-gone! His best friend just vanished into thin air! She could be anywhere! She
-could be in danger. Possibilities swarmed Roscoe's mind. Was she transported to
-another temple? Another country? Frantic ideas bounced around in his head. Then
-he paused and remembered her saying this temple was built by ancient aliens. Bee
-might not even be on this planet.
+Roscoe se quedó atónito. "No esperaba eso", murmuró para sí mismo. abeja era
+¡desaparecido! ¡Su mejor amigo se desvaneció en el aire! ¡Ella podría estar en cualquier lugar! Ella
+podría estar en peligro. Las posibilidades invadieron la mente de Roscoe. ¿Fue transportada a
+otro templo? ¿Otro pais? Ideas frenéticas rebotaban en su cabeza. Entonces
+hizo una pausa y la recordó diciendo que este templo fue construido por antiguos extraterrestres Abeja
+puede que ni siquiera esté en este planeta.
 
-Roscoe gritted his teeth. "I will find her," he declared into the emptiness. "No
-matter what, I will get her back!" With newfound resolve, Roscoe prepared to
-call back the Luck Fish, escape the cave, and embark upon the daring rescue of
-his best friend. After a trip to the bar, of course.
+Roscoe apretó los dientes. "La encontraré", declaró en el vacío. "No
+pase lo que pase, ¡la recuperaré!" Con una nueva determinación, Roscoe se preparó para
+llame al Pez de la Suerte, escape de la cueva y emprenda el audaz rescate de
+su mejor amigo. Después de un viaje al bar, por supuesto.
 
 <details>
 <summary>To be continued...</summary>
