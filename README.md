@@ -39,7 +39,7 @@ Consulta el cronograma a continuación para ver más detalles y especificaciones
 
 ### Vuelve a revisar la Quest para Pioneros (Pioneer Quest)
 
-Consulte nuestra [pioneer quest](https://github.com/tyvdh/soroban-quest--pioneer). Esta abarca la estructura básica de este repositorio, todas las herramientas que necesitarás y el proceso para tener todo andando correctamente.
+Consulta nuestra [Pioneer Quest](https://github.com/tyvdh/soroban-quest--pioneer). Esta abarca la estructura básica de este repositorio, todas las herramientas que necesitarás y el proceso para tener todo andando correctamente.
 
 Este es un recurso importante para tener a mano durante todos estos eventos en vivo.
 
