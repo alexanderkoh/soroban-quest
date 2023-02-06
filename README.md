@@ -9,7 +9,7 @@
 - [Bienvenido](#bienvenido)
 - [Calendario](#calendario)
 - [¿Te sientes perdido?](#te-sientes-perdido)
-  - [Vuelve a revisar la mejor Quest](#vuelve-a-revisar-la-mejor-quest)
+  - [Vuelve a revisar nuestra Quest para Pioneros](#vuelve-a-revisar-la-mejor-quest)
 - [Únete a nosotros en Discord](#únete-a-nosotros-en-discord)
 
 ## Bienvenido
