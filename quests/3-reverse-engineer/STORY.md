@@ -1,4 +1,4 @@
-# Chapter 3
+# Capítulo 3
 
 Blossom Bernice Breydenblach y Roscoe atravesaron el sombrío pasillo que conducía a una gran puerta de madera. 
 Habían perdido de vista a Zebulon hacía muchos giros y vueltas, y Bee esperaba que le tomara un tiempo cruzar el foso. O mejor aún, que caería 
