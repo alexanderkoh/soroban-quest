@@ -1,83 +1,65 @@
-# Quest 4 - Cross Contract <!-- omit in toc -->
+# Quest 4 - Contrato cruzado <!-- omit in toc -->
 
 ## TL;DR
 
-You again!? You're back here looking for the quick task? Well, alright, if you
-think you're really ready for it. Good luck!
+¿Otra vez tú!? ¿Vuelves aquí buscando la tarea rápida? Bueno, está bien, si crees
+que realmente estás listo para ello. ¡Buena suerte!
 
-**For this quest, you'll use your Quest Account to deploy the `DataStore`
-contract from Quest 2, invoking the `put` function in it to store some data on
-chain. You must also use your Quest Account to deploy this Quest's
-`CrossContractCall` contract, and use it to make a cross-contract invocation of
-the `get` function from your `DataStore` contract.**
+**Para esta quest, usarás tu cuenta de Quest para desplegar el contrato
+`DataStore` de la Quest 2, invocando la función `put` para almacenar algunos datos en
+cadena. También debe usar su cuenta de Quest para desplegar el contrato
+`CrossContractCall` de esta Quest, y usarlo para realizar una invocación de contrato cruzado de
+la función `get` de su contrato `DataStore`.**
 
-## Table of Contents <!-- omit in toc -->
+## Tabla de Contenidos <!-- omit in toc -->
 
-- [TL;DR](#tldr)
-- [How to Play](#how-to-play)
-- [The Task at Hand](#the-task-at-hand)
-  - [Making an On-Chain Oracle](#making-an-on-chain-oracle)
-  - [Importing Contracts](#importing-contracts)
-  - [Using a Contract Client](#using-a-contract-client)
-  - [Passing Arguments to Soroban CLI](#passing-arguments-to-soroban-cli)
-- [Further Reading](#further-reading)
-- [Still Stuck?](#still-stuck)
+* [TL;DR](https://chat.openai.com/chat#tldr)
+* [Cómo jugar](https://chat.openai.com/chat#c%C3%B3mo-jugar)
+* [La tarea a mano](https://chat.openai.com/chat#la-tarea-a-mano)
 
-## How to Play
+  * [Crear un Oráculo en Cadena](https://chat.openai.com/chat#crear-un-or%C3%A1culo-en-cadena)
+  * [Importación de contratos](https://chat.openai.com/chat#importaci%C3%B3n-de-contratos)
+  * [Usando un cliente de contrato](https://chat.openai.com/chat#usando-un-cliente-de-contrato)
+  * [Pasando argumentos a Soroban CLI](https://chat.openai.com/chat#pasando-argumentos-a-soroban-cli)
+* [Lectura adicional](https://chat.openai.com/chat#lectura-adicional)
+* [Todavía atascado?](https://chat.openai.com/chat#todav%C3%ADa-atascado)
 
-If you missed out on our previous quests, or you just need a refresher, we have
-some (pretty extensive) instructions for the *mechanics* of completing these
-quests (generating keypairs, checking your work, etc.).
+## Cómo jugar
 
-All that information [can be found here][how-to-play] if you need to use those
-instructions again.
+Si te perdiste de nuestras quests anteriores, o solo necesitas un repaso, tenemos algunas instrucciones (bastante extensas) para las *mecánicas* de completar estas misiones (generación de pares de claves, revisión de tu trabajo, etc.).
 
-## The Task at Hand
+Toda esa información [se puede encontrar aquí][cómo-jugar] si necesitas usar esas instrucciones de nuevo.
 
-We know you're excited, and ready to get questing! But, again, please please
-please: **Read the code!!** There is important stuff that you need to know
-inside of there.
+## La tarea a mano
 
-Now, let's talk theory:
+Sabemos que estás emocionado y listo para empezar a hacer misiones! Pero, de nuevo, por favor, por favor
+por favor: **¡Lee el código!!** Hay cosas importantes que necesitas saber
+dentro de allí.
 
-### Making an On-Chain Oracle
+Ahora, hablemos de teoría:
 
-A blockchain "oracle" might seem like one of those buzz-words that *sounds* like
-something cool, but you're not really sure what it's supposed to mean. You could
-think of an oracle as a window into the "outside world" from within a
-blockchain. An oracle brings in outside data for use in the network. You could
-make one that pulls in all kinds of data! Maybe it's:
+### Creación de un Oráculo en la Cadena
 
-- weather data from around the world,
-- the current speedrunning records for Super Mario,
-- football scores and rankings leading up to the World Cup,
-- the price of Bitcoin against another asset,
-- you get the idea... it could be pretty much anything!
+Un "oráculo" de blockchain podría parecer una de esas palabras en tendencia que suenan como algo genial, pero no estás seguro de lo que significa realmente. Puedes pensar en un oráculo como una ventana al "mundo exterior" dentro de una cadena de bloques. Un oráculo trae datos del exterior para su uso en la red. ¡Podrías crear uno que recoja todo tipo de datos! Quizás se trate de:
 
-An oracle could also exist a bit like an on-chain database. Maybe you populate
-it with the public addresses of your closest friends (or your enemies). Or, you
-could store your recipes for delicious guacamole. That data is then available
-for use in other smart contracts, where you might need to use that data for
-various (nefarious?) purposes. Pretty cool, right!?
+* datos climáticos de todo el mundo,
+* los registros actuales de velocidad para Super Mario,
+* resultados y clasificaciones de fútbol antes de la Copa del Mundo,
+* el precio de Bitcoin contra otro activo,
+* tú entiendes... ¡podría ser prácticamente cualquier cosa!
 
-Perhaps you could re-purpose the Quest 2 contract to be some kind of on-chain
-datastore that contains whatever you want! There is, after all, a `get()`
-function which can be invoked from other contracts.
+Un oráculo también podría existir como una base de datos en la cadena. Quizás lo llenes con las direcciones públicas de tus amigos más cercanos (o tus enemigos). O, podrías almacenar tus recetas de guacamole delicioso. Ese dato luego está disponible para su uso en otros contratos inteligentes, donde quizás necesites ese dato para diferentes (¿nefastos?) propósitos. ¿Muy cool, verdad?
 
-### Importing Contracts
+Quizás podrías reutilizar el contrato de la Quest 2 para que sea algún tipo de almacenamiento de datos en la cadena que contenga lo que quieras. Después de todo, hay una función `get()` que se puede invocar desde otros contratos.
 
-So, you have a contract that you want to invoke from inside your own? And, you
-want to know how it's done? In order to invoke `contract_a` from inside
-`contract_b`, you first must import the compiled `contract_a` binary into your
-code for `contract_b`. Doing so makes a couple things happen inside
-`contract_b`:
+### Importando contratos
 
-- any custom types that are declared in `contract_a` are now useable in
-  `contract_b`
-- a `ContractClient` is generated that can be used to invoke `contract_a`
-  functions
+Entonces, tienes un contrato que quieres invocar desde dentro del tuyo? Y, ¿quieres saber cómo se hace? Para invocar `contract_a` desde dentro de `contract_b`, primero debes importar el binario compilado de `contract_a` en tu código para `contract_b`. Al hacerlo, suceden un par de cosas dentro de `contract_b`:
 
-Here's how this might play out in the `contract_b/src/lib.rs` file:
+* cualquier tipo personalizado que se declare en`contract_a` ahora es utilizable en`contract_b`
+* se genera un`ContractClient` que se puede usar para invocar las funciones de`contract_a`
+
+Así es cómo podría suceder esto en el archivo `contract_b/src/lib.rs`:
 
 ```rust
 // We put this inside a `mod{}` block to avoid collisions between type names
@@ -86,79 +68,44 @@ mod contract_a {
 }
 ```
 
-**Note**: When importing a contract file into another contract, it's a good time
-to think about whether or not you want to optimize your build process. You can
-read more about [Optimizing Builds][optimizing] in the Soroban docs.
+**Nota**: Al importar un archivo de contrato en otro contrato, es un buen momento para pensar en si desea optimizar su proceso de compilación. Puede leer más sobre [Optimización de compilaciones][optimizando] en la documentación de Soroban.
 
-#### Caveat on Contract Compilation Order <!-- omit in toc -->
+### Advertencia sobre el orden de compilación de los contratos <!-- omit in toc -->
 
-Previously, we often used a Makefile to automate some of the contract builds in
-this quest series. That could often result in errors being thrown at build time
-for contracts which were irrelevant to what a user was trying to accomplish.
+Anteriormente, a menudo utilizábamos un Makefile para automatizar algunas de las construcciones de contratos en esta serie de misiones. Esto a menudo podía resultar en errores que se arrojaran en tiempo de construcción para contratos que eran irrelevantes para lo que un usuario intentaba lograr.
 
-To ease the completion of this quest, and minimize confusion, we've pre-compiled
-and included the exact same contract from quest 2 inside this directory.
+Para facilitar la finalización de esta misión y minimizar la confusión, hemos precompilado e incluido el mismo contrato de la misión 2 dentro de este directorio.
 
-In the event you are writing your own cross-contract functionality, it's
-important that a compiled file already exist when you use the `contractimport`
-macro. Otherwise, your build will fail (and spectacularly, at that).
+En caso de que esté escribiendo su propia funcionalidad entre contratos, es importante que un archivo compilado ya exista cuando utiliza la macro `contractimport`. De lo contrario, su construcción fallará (y espectacularmente).
 
-### Using a Contract Client
+### Usando un cliente de contrato
 
-Once `contract_a` has been imported into `contract_b`, utilizing a
-cross-contract call is quite simple. The process looks like this:
+Una vez que se ha importado "contract_a" en "contract_b", utilizar una llamada de contrato cruzado es muy sencillo. El proceso se ve así:
 
-- `contract_b` creates a client it will use to invoke functions in `contract_a`
-- `contract_b` makes an invocation using that client, and supplying any
-  arguments that may be needed
-- `contract_a` runs the invoked function and returns its response to
-  `contract_b`
-- `contract_b` then takes the response and does whatever is needed with it
-  (returns all or part of the response, processes the response and returns
-  something else, calls yet another contract, you get the idea)
+* `"contract_b"` crea un cliente que usará para invocar funciones en `"contract_a"`.
+* `"contract_b"` realiza una invocación usando ese cliente y suministrando cualquier argumento que pueda ser necesario.
+* `"contract_a"` ejecuta la función invocada y devuelve su respuesta a `"contract_b"`.
+* `"contract_b"` luego toma la respuesta y hace lo que sea necesario con ella (devuelve toda o parte de la respuesta, procesa la respuesta y devuelve algo más, llama a otro contrato, tú lo entiendes).
 
-You can think of this contract client as if it were an existing "module" that
-you're using in your own contract. Not too bad, Soroban my ol' buddy!
+Puedes pensar en este cliente de contrato como si fuera un módulo existente que estás usando en tu propio contrato. ¡No es tan malo, Soroban mi viejo amigo!
 
-### Passing Arguments to Soroban CLI
+### Pasar argumentos a Soroban CLI
 
-Remember back to Quest 2, for a moment. If you were one of many folks, you may
-have found yourself with a deployed contract that didn't contain the
-`get_self()` function. After staring in confusion for a few moments, you may
-have begun to think how it might be possible to invoke that `get()` function. If
-you managed to figure that out, well done! It's not an immediately obvious
-task... So, let's learn a bit about the process.
+Recuerda la Quest 2 por un momento. Si fuiste una de las muchas personas, es posible que te encontraras con un contrato desplegado que no contenía la función `get_self()`. Después de mirar en confusión por unos momentos, es posible que comenzaras a pensar en cómo podría ser posible invocar esa función `get()`. Si lograste descubrir eso, bien hecho! No es una tarea obviamente inmediata... Así que, aprendamos un poco sobre el proceso.
 
-In case you haven't realized yet, Soroban depends on [Remote Procedure Call
-(RPC)][rpc-wiki] to pass messages between clients and the network. RPC is used
-by a client to request that a server should run a function, and which arguments
-it should supply. The server then runs the function, and reports back to the
-client. The advantage of this approach is that the function doesn't have to
-exist or run in the client. Here's [an illustrated article][rpc-gforg] on
-GeeksforGeeks that goes much further in depth.
+En caso de que aún no lo hayas notado, Soroban depende de [Remote Procedure Call (RPC)][rpc-wiki] para pasar mensajes entre clientes y la red. RPC se utiliza por un cliente para solicitar que un servidor ejecute una función y cuáles argumentos debería suministrar. Luego, el servidor ejecuta la función y informa al cliente. La ventaja de este enfoque es que la función no tiene que existir o ejecutarse en el cliente. Aquí hay [un artículo ilustrado][rpc-gforg] en GeeksforGeeks que va mucho más en profundidad.
 
-Specifically, Soroban utilizes [JSON-RPC][jsonrpc] to pass and read messages
-between clients and servers. This uses the JSON data format for those messages.
-So, in some cases you can pass a JSON string as an argument to a contract's
-function. The [Auth (Advanced)][auth-advanced] example in the documentation
-describes how you can use this technique to invoke a contract, and tell the
-contract to run using `invoker()` authentication. The use of the word `Invoker`
-in the example below is a *fixed* way of authenticating with the example
-contract. This means the `invoker()` authentication would not work if you were
-to supply any other word, such as `myPassword` or `AccountId` for example.
+Específicamente, Soroban utiliza [JSON-RPC][jsonrpc] para pasar y leer mensajes entre clientes y servidores. Esto usa el formato de datos JSON para esos mensajes. Por lo tanto, en algunos casos, puedes pasar una cadena JSON como argumento a la función de un contrato. El ejemplo [Auth (Avanzado)][auth-advanced] en la documentación describe cómo puedes usar esta técnica para invocar un contrato y decirle al contrato que se ejecute usando la autenticación `invoker()`. El uso de la palabra "Invoker" en el ejemplo a continuación es una forma *fija* de autenticarse con el contrato de ejemplo. Esto significa que la autenticación `invoker()` no funcionaría si suministraras cualquier otra palabra, como `myPassword` o `AccountId`, por ejemplo.
 
-```bash
-soroban invoke \
-    --wasm target/wasm32-unknown-unknown/release/soroban_auth_advanced_contract.wasm \
-    --id 1 \
-    --account GC24I42QMKKR4NE6IYNPCQHUO4PXWXDGNZ7QVMMSR5EWAYSGKBHPLGHH \
-    --fn increment \
-    --arg '{"object":{"vec":[{"symbol":"Invoker"}]}}' \
-    --arg 0
-```
+soroban invoke
+--wasm target/wasm32-unknown-unknown/release/soroban_auth_advanced_contract.wasm
+--id 1
+--account GC24I42QMKKR4NE6IYNPCQHUO4PXWXDGNZ7QVMMSR5EWAYSGKBHPLGHH
+--fn increment
+--arg '{"object":{"vec":[{"symbol":"Invoker"}]}}'
+--arg 0
 
-You can see that it's clearly a JSON object that isn't presented in a "pretty"
-manner. Some other examples of these JSON arguments might look like this:
+Se puede ver que es claramente un objeto JSON que no se presenta de manera "bonita". Algunos otros ejemplos de estos argumentos JSON podrían verse así:
 
 ```json
 '[{"u32":5}]' // the integer 5
@@ -167,42 +114,16 @@ manner. Some other examples of these JSON arguments might look like this:
 '{"contractCode":{"wasm":"<raw_wasm_hex_encoded>"}}' // the hex-encoded binary that makes up a contract
 ```
 
-So, that's how to pass some of the more advanced arguments to the Soroban CLI,
-but you need to figure out how to pass the *right* argument for this quest. Our
-very own @Smephite has put together an [**incredible** guide][smephite-guide] to
-the various soroban types and how to use them in contract invocations. Read
-that! For real! You'll **need** some of the information in that document to
-complete this quest.
+Entonces, así es cómo pasar algunos de los argumentos más avanzados a la Soroban CLI, pero debes descubrir cómo pasar el argumento correcto para esta quest. Nuestro propio @Smephite ha reunido una [guía increíble][smephite-guide] sobre los diferentes tipos de soroban y cómo usarlos en las invocaciones de contratos. ¡Léelo! ¡De verdad! Necesitarás alguna de la información en ese documento para completar esta quest.
 
-## Further Reading
+## Lectura adicional
 
-- The [Cross Contract Calls example][ccc-example] contract in the Soroban
-  documentation has even more details and hints regarding this topic.
-- Read more about [`traits` in Rust][rust-traits] in The Rust Reference
-- The "Learn" section of the Soroban documentation has an article all about
-  [interacting with contracts][interacting-contracts], and it's **definitely**
-  worth the read!
-- We didn't explore the finer details of keeping data on chain in this quest,
-  but there is so much more to learn about this! Please check out the
-  [persisting data][persisting-data] article in the Soroban documentation.
-- This [Simple Guide to Soroban Types][smephite-guide] is an absolute
-  game-changer for interacting with smart contracts from the Soroban CLI.
+* El contrato de ejemplo de [Llamadas de contrato cruzado][ccc-example] en la documentación de Soroban tiene aún más detalles e indicios sobre este tema.
+* Lee más sobre [`traits` en Rust][rust-traits] en La Referencia de Rust
+* La sección "Aprender" de la documentación de Soroban tiene un artículo completo sobre [interactuar con contratos][interacting-contracts], ¡y definitivamente vale la pena leerlo!
+* No exploramos los detalles finos de mantener los datos en la cadena en esta misión, ¡pero hay mucho más por aprender sobre esto! Por favor, consulte el artículo [persistencia de datos][persisting-data] en la documentación de Soroban.
+* Esta [Guía simple de tipos de Soroban][smephite-guide] es un cambio de juego absoluto para interactuar con contratos inteligentes desde la CLI de Soroban.
 
-## Still Stuck?
+## Aún atascado?
 
-If you're hitting a brick wall, and you're not sure what your next move is,
-check out [this section](../../README.md#feeling-lost) in our main README. It's
-got a couple of suggestions for where you might go from here.
-
-[how-to-play]: ../1-hello-world/README.md#how-to-play
-[ccc-example]: https://soroban.stellar.org/docs/examples/cross-contract-call
-[rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
-[rpc-gforg]: https://www.geeksforgeeks.org/remote-procedure-call-rpc-in-operating-system/
-[jsonrpc]: https://www.jsonrpc.org/
-[auth-advanced]: https://soroban.stellar.org/docs/examples/auth-advanced#run-the-contract
-[optimizing]: https://soroban.stellar.org/docs/tutorials/build-optimized
-[rust-traits]: https://doc.rust-lang.org/book/ch10-02-traits.html
-[interacting-contracts]: https://soroban.stellar.org/docs/learn/interacting-with-contracts
-[persisting-data]: https://soroban.stellar.org/docs/learn/persisting-data
-[smephite-guide]: https://gist.github.com/Smephite/09b40e842ef454effe4693e0d18246d7
-[account-id]: https://gist.github.com/Smephite/09b40e842ef454effe4693e0d18246d7#sco_account_id
+Si te encuentras en un callejón sin salida y no estás seguro de cuál es tu siguiente movimiento, consulta [esta sección](https://chat.openai.com/README.md#feeling-lost) en nuestro README principal. Tiene algunas sugerencias sobre hacia dónde ir desde aquí.
