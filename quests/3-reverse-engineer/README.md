@@ -13,29 +13,29 @@ usando la cuenta GAC7HE4PQWI7H34JQN6QLQ7Y7NTAUZDWJZ4SJ6GXVC4K2DN7N65K5NLI.
 ## Tabla de Contenidos <!-- omit in toc -->
 
 - [TL;DR](#tldr)
-- [How to Play](#how-to-play)
-- [The Task at Hand](#the-task-at-hand)
-  - [Explore the Contract Code](#explore-the-contract-code)
-  - [Using Soroban-CLI to Decode XDR](#using-soroban-cli-to-decode-xdr)
-  - [How do I find a `contractId`?](#how-do-i-find-a-contractid)
-    - [Find an Operation](#find-an-operation)
-    - [View the Transaction Result](#view-the-transaction-result)
-    - [Sidenote About Reading Deployed WASM Binaries](#sidenote-about-reading-deployed-wasm-binaries)
-- [Further Reading](#further-reading)
-- [Still Stuck?](#still-stuck)
+- [Como Jugar](#como-jugar)
+- [La tarea a mano](#la-tarea-a-mano)
+  - [Explora el Código del Contrato](#explora-el-código-del-contrato)
+  - [Usando Soroban-CLI para decodificar XDR](#usando-soroban-cli-para-decodificar-xdr)
+  - [Como encuentro un `contractId`?](#como-encuentro-un-contractid)
+    - [Encuentra una Operacion](#encuentra-una-operación)
+    - [Vizualiza el resultado de la transacción](#vizualiza-el-resultado-de-la-transacción)
+    - [Nota al margen sobre la lectura de binarios WASM implementados.](#nota-al-margen-sobre-la-lectura-de-binarios-wasm-implementados)
+- [Lectura Adicional](#lectura-adicional)
+- [¿Todavía atascado?](#todavía-atascado)
 
-## How to Play
+## Como Jugar
 
 Si te perdiste de nuestras misiones anteriores, o necesitas un recordatorio, tenemos algunas 
 instrucciones *mecánicas* (como generar parejas de claves, verificar tu trabajo, etc.) para completar estas misiones. 
 Toda esa información está [aquí][how-to-play] si necesitas usar esas instrucciones nuevamente.
 
-## The Task at Hand
+## La tarea a mano
 
 Oigo que quieres: "¡Vamos a la aventura!" ¡Me encanta tu entusiasmo! 
 Pero, quiero ~~suplicar~~ implorarte que hagas una cosa primero: ¡Lee el código!
 
-### Explore the Contract Code
+### Explora el Código del Contrato
 
 Ok, así que hemos estado en esto un par de veces antes. Puedes sentir que estás *empezando* a entender el orden de las cosas y cómo todo esto funciona. **O**, puedes sentir que estás totalmente perdido y simplemente quieres que alguien más te dé la respuesta.
 
@@ -43,7 +43,7 @@ Cualquiera que sea tu sentimiento, quiero poner esto en la voz más enfatizada q
 
 Confía en mí, querrás leer el contrato para esto (todas las misiones, honestamente). Claro, leer el código te ayudará a entender el contrato. Sí, eso es lo que estamos tratando de hacer. **Pero**, también responderá muchas de las preguntas que tendrás mientras trabajas en esta tarea.
 
-### Using Soroban-CLI to Decode XDR
+### Usando Soroban-CLI para decodificar XDR
 
 Un término con el que puedes estar familiarizado es "XDR", que significa Representación de Datos Externos. 
 
@@ -66,7 +66,7 @@ transacción que crea una cuenta con un saldo inicial de 10,000 XLM (por supuest
 Existen muchos diferentes "tipos" que puedes utilizar el cli de soroban para decodificar. 
 Si ejecutas `soroban xdr dec --help` en tu terminal, verás todas las diferentes opciones que están disponibles para ti.
 
-### How do I find a `contractId`?
+### Como encuentro un `contractId`?
 
 ¿Alguna vez has escuchado la expresión "Hay más de una manera de pelar un gato"? 
 Sé, es desagradable y asqueroso! ¡No sé quién querría tener *una* manera de pelar un gato!! 
@@ -81,7 +81,7 @@ La siguiente abordaje sensato para encontrar un 'contractId' comenzará encontra
 relevante para la cuenta en cuestión, y luego la correspondiente 'transacción'. 
 Esto definitivamente no es la única manera de hacerlo (ni siquiera es la más rápida o fácil), pero sí es directa y fácil de seguir.
 
-#### **Find an Operation**
+#### **Encuentra una Operación**
 
 Comencemos dirigiéndonos al [Laboratorio Estelar][lab] (utilizando futurenet), y hacemos clic
 en **Explore Endpoints** -> **Operations** -> **Operations for Account**. Introduzca
@@ -139,26 +139,13 @@ esta operación es una cuenta cargando/implantando un contrato inteligente). Nue
 }
 ```
 
-**Note**: You could also use this same technique to find some pretty useful
-information from `HostFunctionHostFnInvokeContract` operations. You could use
-those operations to see exactly what a given account used to invoke a given
-contract. Check out [this video][twitch] to learn a bit more!
+**Note**: Puede usar esta misma técnica para obtener información útil de las operaciones `HostFunctionHostFnInvokeContract`. Puede usar esas operaciones para ver exactamente qué cuenta se utilizó para invocar un contrato determinado. Eche un vistazo a [este video][twitch] para obtener un poco más de información.
 
-#### **View the Transaction Result**
+#### **Vizualiza el resultado de la transacción**
 
-From there, we find the link to the **transaction** that contains this
-operation. It's provided in the operation's `_links.transaction` object. If
-you're in the Lab, you can click on that link and it will open up the endpoint
-explorer with the fields for that transaction pre-filled, and you just have to
-click **Submit** once again. (For the JSON among us, you can copy/paste the link
-into your browser, or you can [click here][tx].)
+Desde allí, encontramos el enlace a la **transacción** que contiene esta operación. Se proporciona en el objeto `_links.transaction` de la operación. Si estás en el Laboratorio, puedes hacer clic en ese enlace y se abrirá el explorador de extremos con los campos para esa transacción completados previamente, y solo tienes que hacer clic en **Enviar** nuevamente. (Para los de JSON entre nosotros, puedes copiar / pegar el enlace en tu navegador, o puedes [hacer clic aquí][tx].)
 
-In the transaction information, you're looking for the `result_meta_xdr` field.
-This contains the result from the transaction, as well as what has changed in
-the networ as a result of the transaction. Most pertinent to this quest, it will
-contain the `contractId` of the deployed contract. In the Lab, if you click on
-that XDR string, it will take you to the XDR viewer, where you can find the
-`contractId` (don't forget to [decode the base64][twitch-clip] somehow).
+En la información de la transacción, estás buscando el campo `result_meta_xdr`. Esto contiene el resultado de la transacción, así como lo que ha cambiado en la red como resultado de la transacción. Lo más pertinente para esta búsqueda, contendrá el `contractId` del contrato desplegado. En el Laboratorio, si haces clic en esa cadena XDR, te llevará al visor XDR, donde puedes encontrar el `contractId` (no olvides [descifrar la base64][twitch-clip] de alguna manera).
 
 <details>
 <summary>View screenshot</summary>
@@ -167,21 +154,18 @@ that XDR string, it will take you to the XDR viewer, where you can find the
 
 </details>
 
-Alternatively, you could copy/paste the whole Result Meta XDR string and decode
-it using the Soroban CLI to get the information you're after.
+Alternativamente, podrías copiar / pegar la cadena XDR Result Meta completa y decodificarla usando la CLI de Soroban para obtener la información que buscas.
 
-#### **Sidenote About Reading Deployed WASM Binaries**
+#### **Nota al margen sobre la lectura de binarios WASM implementados.**
 
-This is merely tangential to today's Quest, but it is very interesting and
-useful nonetheless.
+Esto es simplemente tangencial a la Quest de hoy, pero es muy interesante y útil de todos modos.
 
 <details>
 <summary>Are you curious? Go ahead. Read on...</summary>
 
-The reason we've taken you to see the full transaction meta is to point out that
-included in this XDR is also the `contractCode`! Yeah, that's right. The whole
-thing! You could even decode it and use it as a normal WASM file, too. You'd
-have to do it like this:
+La razón por la que te hemos llevado a ver la metatransacción 
+completa es para señalar que está incluido en este XDR también el código de contrato. ¡Eso es correcto! 
+¡Todo! Incluso podrías decodificarlo y usarlo como un archivo WASM normal. Tendrías que hacerlo así.:
 
 ```bash
 soroban xdr dec \
@@ -189,40 +173,33 @@ soroban xdr dec \
     --xdr <put your transaction_result_meta XDR here> \
     --output json
 
-# look for the output field labeled `contractCode`. It's displayed in hex, so
-# you'd have to convert it into a binary file, maybe like this:
+# Busca el campo de salida etiquetado como "contractCode". Se muestra en hexadecimal, por lo que
+# Tienes que convertirlo en un archivo binario, tal vez así:
 
 echo "<the-wasm-hex>" | xxd -r -p > output.wasm
 ```
 
-The `output.wasm` file resulting after that would be identical to the compiled
-contract that was initially deployed. You could re-deploy it, use `soroban gen`
-to get information about it, or whatever else you could come up with. Cool,
-huh!?
+La salida `output.wasm` resultante después de eso será idéntica al contrato compilado que se desplegó inicialmente. 
+Puedes desplegarlo de nuevo, usar `soroban gen` para obtener información sobre él o cualquier otra cosa que puedas imaginar. ¡Genial, ¿no?
 
-Like we said, this isn't particularly important to this quest, but it could come
-in handy at some point for you.
+Como dijimos, esto no es particularmente importante para esta búsqueda, pero podría ser útil en algún punto para ti.
+
 </details>
 
-## Further Reading
+## Lectura Adicional
 
-- [Learn more about XDR][xdr] in the Stellar Developer Documentation.
-- [This episode][twitch-full] of "Soroban Talks" is **SO** useful, and can help
-  you get a handle on what's happening inside of Soroban. (Hint: Starting around
-  [23:14][twitch] is a *really* useful discussion about decoding the XDR values
-  into something a little more user-friendly.)
-- Developers can also use the Soroban-RPC interface to interact with futurenet
-  and get current state data. [This design doc][soroban-rpc] is being used
-  discuss and develop how this API functions.
-- Some basic information about the usage of the Soroban CLI can be found on the
-  [Soroban Docs website][install-soroban]. In addition to that page many of the
-  tutorials and examples contain example CLI commands.
+- Aprende más sobre XDR en la Documentación para Desarrolladores de Stellar.
+- Este episodio de "Soroban Talks" es **TAN** útil y puede ayudarte a comprender lo que está sucediendo dentro de Soroban. (Pista: A partir de [23:14][twitch] hay una discusión *realmente* útil sobre la decodificación de los valores XDR en algo un poco más amigable para el usuario).
+- Los desarrolladores también pueden usar la interfaz de RPC de Soroban para interactuar con futurenet y obtener datos del estado actual. [Este documento de diseño][soroban-rpc] se está usando para discutir y desarrollar la forma en que funciona esta API.
+- Puede encontrar alguna información básica sobre el uso de la interfaz de línea de comandos (CLI) de Soroban en el sitio web de Documentación de Soroban. [Esta página][install-soroban]. Además de esta página, muchos de los tutoriales y ejemplos contienen comandos de CLI de ejemplo.- Aprende más sobre XDR en la Documentación para Desarrolladores de Stellar.
+- Este episodio de "Soroban Talks" es **TAN** útil y puede ayudarte a comprender lo que está sucediendo dentro de Soroban. (Pista: A partir de [23:14][twitch] hay una discusión *realmente* útil sobre la decodificación de los valores XDR en algo un poco más amigable para el usuario).
+- Los desarrolladores también pueden usar la interfaz de RPC de Soroban para interactuar con futurenet y obtener datos del estado actual. [Este documento de diseño][soroban-rpc] se está usando para discutir y desarrollar la forma en que funciona esta API.
+- Puede encontrar alguna información básica sobre el uso de la interfaz de línea de comandos (CLI) de Soroban en el sitio web de Documentación de Soroban. [Esta página][install-soroban]. Además de esta página, muchos de los tutoriales y ejemplos contienen comandos de CLI de ejemplo.
 
-## Still Stuck?
+## ¿Todavía atascado?
 
-If you're hitting a brick wall, and you're not sure what your next move is,
-check out [this section](../../README.md#feeling-lost) in our main README. It's
-got a couple of suggestions for where you might go from here.
+Si estás golpeando una pared de ladrillos y no estás seguro de cuál es tu próximo paso, revisa esta sección en nuestro README principal. 
+Tiene un par de sugerencias para dónde podrías ir a partir de aquí.
 
 [how-to-play]: ../1-hello-world/README.md#how-to-play
 [xdr]: https://developers.stellar.org/docs/encyclopedia/xdr
