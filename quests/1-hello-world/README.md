@@ -60,7 +60,8 @@ cd /workspace/<the-workspace-name> # `sq pull` must be run from inside the works
 sq pull
 ```
 
-También puedes hacerlo manualmente, si eres un experto en `git`. Encuentra los detalles específicos en nuestra [Pioneer Quest][pq-new-quests].
+También puedes hacerlo manualmente, si eres un experto en `git`. 
+Encuentra los detalles específicos en nuestra [Pioneer Quest][pq-new-quests].
 
 Una vez completes esto, verás las nuevas misiones en el siguiente directorio:
 `/workspace/<nombre-de-tu-espacio-de-trabajo>/quests/`
