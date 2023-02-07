@@ -29,7 +29,7 @@ Toda esa información está [aquí][how-to-play] por si necesitas usar esas inst
 ## La tarea a mano
 
 Entiendo que quieres "¡Empecemos la misión!" ¡Me encanta tu entusiasmo!
-Pero, quiero ~~suplicar~~ e implorarte que hagas una cosa primero: ¡Lee el código!
+Pero, quiero suplicar e implorarte que hagas una cosa primero: ¡Lee el código!
 
 ### Explora el Código del Contrato
 
@@ -59,7 +59,7 @@ Si ejecutas `soroban xdr dec --help` en tu terminal, verás todas las opciones d
 
 ### Como encuentro un `contractId`?
 
-¿Alguna vez has escuchado la expresión "Hay más de una manera de pelar un gato"? Sé, es desagradable y asqueroso! ¡No sé quién querría tener *una* manera de pelar un gato!! De todos modos, me estoy desviando ...
+¿Alguna vez has escuchado la expresión "Hay más de una manera de pelar un gato"? Sé, es desagradable y asqueroso! ¡No sé quién querría tener *una* manera de pelar un gato!! De todos modos, me estoy desviando...
 
 Existen distintast maneras de encontrar un `contractId` para un contrato que ya desplegado. Todas ellas implican decodificar XDR y eso se puede hacer con soroban-cli, el Laboratorio Stellar, RunKit o podrías encontrar tu propia manera de decodificar / codificar la base64 según sea necesario. Pero cada manera comienza encontrando el XDR correcto a decodificar.
 
