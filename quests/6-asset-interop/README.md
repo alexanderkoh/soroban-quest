@@ -40,7 +40,7 @@ Si te perdiste de nuestras misiones anteriores o solo necesitas un repaso, tenem
 instrucciones (bastante extensas) para las *mecánicas* de completar estas
 misiones (generar claves, revisar tu trabajo, etc.).
 
-Toda esta información [se puede encontrar aquí][how-to-play] si necesitas esas
+Toda esta información [se puede encontrar aquí][como-jugar] si necesitas esas
 instrucciones nuevamente.
 
 ## La tarea a realizar
