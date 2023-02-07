@@ -49,7 +49,7 @@ Algunas de las partes más importantes que necesitarás saber sobre este:
 - Usar la CLI `sq` para iniciar sesión en tu cuenta de Stellar Quest, adquirir nuevas Quests, verificar Quests en las que has trabajado y más.
 - Interactuar con un sandbox de Soroban, así como con Futurenet, desde dentro de este espacio de trabajo de Gitpod.
 
-Si te sientes perdido con esto, probablemente podrías usar un repaso. Adelante, [Se un pionero][pioneer] una vez más. Nosotros no Juzgamos!
+Si te sientes perdido con esto, probablemente podrías usar un repaso. Adelante, [se un pionero][pioneer] una vez más. Nosotros no Juzgamos!
 
 ## Únete a nosotros en Discord
 
