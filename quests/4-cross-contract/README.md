@@ -42,11 +42,11 @@ Ahora, hablemos de teoría:
 
 Un "oráculo" de blockchain podría parecer una de esas palabras en tendencia que suenan como algo genial, pero no estás seguro de lo que significa realmente. Puedes pensar en un oráculo como una ventana al "mundo exterior" dentro de una cadena de bloques. Un oráculo trae datos del exterior para su uso en la red. ¡Podrías crear uno que recoja todo tipo de datos! Quizás se trate de:
 
-* datos climáticos de todo el mundo,
-* los registros actuales de velocidad para Super Mario,
-* resultados y clasificaciones de fútbol antes de la Copa del Mundo,
-* el precio de Bitcoin contra otro activo,
-* tú entiendes... ¡podría ser prácticamente cualquier cosa!
+* Datos climáticos de todo el mundo.
+* Los registros actuales de velocidad para Super Mario.
+* Resultados y clasificaciones de fútbol antes de la Copa del Mundo.
+* El precio de Bitcoin contra otro activo.
+* Tú entiendes... ¡podría ser prácticamente cualquier cosa!
 
 Un oráculo también podría existir como una base de datos en la cadena. Quizás lo llenes con las direcciones públicas de tus amigos más cercanos (o tus enemigos). O, podrías almacenar tus recetas de guacamole delicioso. Ese dato luego está disponible para su uso en otros contratos inteligentes, donde quizás necesites ese dato para diferentes (¿nefastos?) propósitos. ¿Muy cool, verdad?
 
@@ -56,8 +56,8 @@ Quizás podrías reutilizar el contrato de la Quest 2 para que sea algún tipo d
 
 Entonces, tienes un contrato que quieres invocar desde dentro del tuyo? Y, ¿quieres saber cómo se hace? Para invocar `contract_a` desde dentro de `contract_b`, primero debes importar el binario compilado de `contract_a` en tu código para `contract_b`. Al hacerlo, suceden un par de cosas dentro de `contract_b`:
 
-* cualquier tipo personalizado que se declare en`contract_a` ahora es utilizable en`contract_b`
-* se genera un`ContractClient` que se puede usar para invocar las funciones de`contract_a`
+* Cualquier tipo personalizado que se declare en`contract_a` ahora es utilizable en`contract_b`
+* Se genera un`ContractClient` que se puede usar para invocar las funciones de`contract_a`
 
 Así es cómo podría suceder esto en el archivo `contract_b/src/lib.rs`:
 

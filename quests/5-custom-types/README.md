@@ -105,16 +105,13 @@ Si eliges hacer clic en solo un enlace en todo este README, por favor hazlo en e
 
 También es importante entender que los enums solo son compatibles como tipos de contrato en Soroban cuando todas las variantes tienen un literal entero explícito, o cuando todas las variantes son variantes unitarias o de un solo campo.
 
-En el artículo **[Tipos personalizados][learn-ct]** , aprenderás mucho sobre
-
-cómo Soroban almacenará tus tipos personalizados en el Ledger, la conversión XDR, la representación JSON y más.
+En el artículo **[Tipos personalizados][learn-ct]** , aprenderás mucho sobre cómo Soroban almacenará tus tipos personalizados en el Ledger, la conversión XDR, la representación JSON y más.
 
 Encontrarás un recurso adicional (y muy útil) en la documentación de Soroban aquí: [Enumeraciones de errores][error-enums] describe cómo podrías usar una `enum` para transmitir de manera significativa la información de error. Eso podría parecer vagamente familiar, si recuerdas haber tenido que resolver frenéticamente qué error estabas recibiendo (y por qué) durante [La Misión 2](https://chat.openai.com/2-auth-store/README.md).
 
 ### Crea tus tipos personalizados
 
-Ok, eso fue un gran contenido educativo, ¡pero volvemos al camino! Para
-esta búsqueda, debes crear y luego invocar los siguientes tipos personalizados en tu contrato:
+Ok, eso fue un gran contenido educativo, ¡pero volvemos al camino! Para esta búsqueda, debes crear y luego invocar los siguientes tipos personalizados en tu contrato:
 
 #### Rectángulo
 

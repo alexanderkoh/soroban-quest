@@ -24,14 +24,14 @@ Soroban Quest (también conocido como Stellar Quest Live, Serie 5) se llevará a
 Consulta el cronograma a continuación para ver más detalles y especificaciones.
 
 
-| Quest | Titulo                       | Día y Hora    (UTC) |
-| ------- | ------------------------------ | ---------------------- |
-| 01    | Hola Mundo                   | Noviembre 11, 2:00am |
-| 02    | Auth Storage                 | Noviembre 14, 2:00pm |
-| 03    | IngenieriaInversa            | Noviembre 18, 2:00am |
-| 04    | Contrato Cruzado             | Noviembre 21, 2:00pm |
-| 05    | Tipos Personalizados.        | Noviembre 28, 2:00pm |
-| 06    | Interoperabilidad de activos | Noviembre 2, 2:00am  |
+| Misión | Titulo                       |  Día y Hora    (UTC) |
+| ------ | ---------------------------  | -------------------- |
+| 01     | Hola Mundo                   | Noviembre 11, 2:00am |
+| 02     | Auth Storage                 | Noviembre 14, 2:00pm |
+| 03     | Ingeniería Inversa           | Noviembre 18, 2:00am |
+| 04     | Contrato Cruzado             | Noviembre 21, 2:00pm |
+| 05     | Tipos Personalizados         | Noviembre 28, 2:00pm |
+| 06     | Interoperabilidad de activos | Noviembre 2, 2:00am  |
 
 ## ¿Te sientes perdido?
 
@@ -49,7 +49,7 @@ Algunas de las partes más importantes que necesitarás saber sobre este:
 - Usar la CLI `sq` para iniciar sesión en tu cuenta de Stellar Quest, adquirir nuevas Quests, verificar Quests en las que has trabajado y más.
 - Interactuar con un sandbox de Soroban, así como con Futurenet, desde dentro de este espacio de trabajo de Gitpod.
 
-Si te sientes perdido con esto, probablemente podrías usar un repaso. Adelante, [Se un pionero][pioneer] una vez más. Nosotros no Juzgamos!
+Si te sientes perdido con esto, probablemente podrías usar un repaso. Adelante, [se un pionero][pioneer] una vez más. Nosotros no Juzgamos!
 
 ## Únete a nosotros en Discord
 
