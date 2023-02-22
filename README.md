@@ -14,13 +14,13 @@
 
 ## Bienvenido
 
-¡Bienvenido a Soroban Quest! Estamos más que emocionados de que te hayas unido. Hemos trabajado duro para hacer de esta una experiencia de aprendizaje productivo, interesante y, sobre todo, divertido para ti.
+¡Bienvenido a Soroban Quest! Estamos más que emocionados de que te hayas unido. Hemos trabajado duro para hacer de esta una experiencia de aprendizaje productiva, interesante y, sobre todo, divertida para ti.
 
 Así que, ¡Divirtámonos!
 
 ## Calendario
 
-Soroban Quest (también conocido como Stellar Quest Live, Serie 5) se llevará a cabo 6 increíbles misiones (o Quests), entre (dependiendo de tu zona horaria) el 10 de noviembre y el 2 de diciembre de 2022.
+Soroban Quest (también conocido como Stellar Quest Live, Serie 5) llevará a cabo 6 increíbles misiones (o Quests), entre (dependiendo de tu zona horaria) el 10 de noviembre y el 2 de diciembre de 2022.
 Consulta el cronograma a continuación para ver más detalles y especificaciones.
 
 
